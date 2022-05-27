@@ -12,11 +12,11 @@ const Layout: React.FC<LayoutProps> = ({ children, setTheme }) => {
     <div
       id="layout"
       className={classJoin(
-        'w-full transition-all',
+        'w-full transition-all bg-gradient-to-r overflow-hidden',
         theme === 'dark'
-          ? 'bg-black text-white'
+          ? 'from-slate-900/95 to-slate-900 text-slate-50'
           : theme === 'light'
-          ? 'bg-white text-black'
+          ? 'from-slate-900/5 to-slate-50 text-slate-900/80'
           : '',
       )}
     >

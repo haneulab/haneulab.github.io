@@ -16,12 +16,13 @@ const ThemeBar: React.FC<ThemeBarProps> = ({ setTheme }) => {
     <div>
       <section>
         <button
+          className="flex items-center justify-center"
           onClick={onThemeBarButtonClick}
           data-type={themeCtx === 'dark' ? 'light' : 'dark'}
         >
           <BsLightbulbFill
             className={classJoin(
-              'text-2xl font-bold transition-all',
+              'text-3xl font-bold transition-all transform rota',
               themeCtx === 'dark' ? 'text-yellow-500/90' : 'text-black/90',
             )}
           />
