@@ -5,7 +5,7 @@ import { useContext } from 'react';
 const MobileMenuClick: React.FC = () => {
   const theme = useContext(ThemeContext);
   return (
-    <nav className="w-full flex justify-end pr-3">
+    <nav className="pl-4">
       <button className="flex flex-col">
         <span
           className={classJoin(

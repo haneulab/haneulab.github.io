@@ -1,3 +1,4 @@
+import Exploration from 'components/Exploration';
 import Introduction from 'components/Introduction';
 import Box from 'customs/Box';
 import BoxWrap from 'customs/BoxWrap';
@@ -15,6 +16,7 @@ const Homepage: NextPage = () => {
             <React.Fragment>
               {/* insert components */}
               <Introduction />
+              <Exploration />
             </React.Fragment>
           }
         />

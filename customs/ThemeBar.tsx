@@ -2,28 +2,38 @@ import { ThemeContext } from 'contexts/ThemeContext';
 import classJoin from 'helpers/classJoin';
 import { ThemeBarProps } from 'interfaces/customs';
 import React, { useContext } from 'react';
-import { BsLightbulbFill } from 'react-icons/bs';
 const ThemeBar: React.FC<ThemeBarProps> = ({ setTheme }) => {
-  const themeCtx = useContext(ThemeContext);
+  const theme = useContext(ThemeContext);
   const onThemeBarButtonClick = (
     event: React.MouseEvent<HTMLButtonElement>,
   ) => {
     event.preventDefault();
-    const theme = event.currentTarget.dataset.type as 'light' | 'dark';
-    setTheme(theme);
+    const themeValue = event.currentTarget.dataset.type as 'light' | 'dark';
+    setTheme(themeValue);
   };
   return (
-    <div>
+    <div className="w-full flex justify-end">
       <section>
         <button
-          className="flex items-center justify-center"
+          className={classJoin(
+            'flex items-center p-1 bg-slate-200 w-16 h-8 overflow-hidden rounded-3xl transition-all shadow-2xl shadow-black ring-2',
+            theme === 'dark'
+              ? 'justify-start'
+              : theme === 'light'
+              ? 'justify-end'
+              : '',
+          )}
           onClick={onThemeBarButtonClick}
-          data-type={themeCtx === 'dark' ? 'light' : 'dark'}
+          data-type={theme === 'dark' ? 'light' : 'dark'}
         >
-          <BsLightbulbFill
+          <span
             className={classJoin(
-              'text-3xl font-bold transition-all transform rota',
-              themeCtx === 'dark' ? 'text-yellow-500/90' : 'text-black/90',
+              'w-6 h-6 rounded-full bg-gradient-to-r animate-spin hover hover:animate-pulse hover:transform hover:scale-125',
+              theme === 'dark'
+                ? 'from-yellow-400 to-orange-400'
+                : theme === 'light'
+                ? 'from-black/90 to-slate-500'
+                : '',
             )}
           />
         </button>
