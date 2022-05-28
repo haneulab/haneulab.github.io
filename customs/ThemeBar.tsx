@@ -28,7 +28,7 @@ const ThemeBar: React.FC<ThemeBarProps> = ({ setTheme }) => {
         >
           <span
             className={classJoin(
-              'w-6 h-6 rounded-full bg-gradient-to-r animate-spin hover hover:animate-pulse hover:transform hover:scale-125',
+              'w-6 h-6 rounded-full transition-all bg-gradient-to-r animate-spin hover hover:animate-pulse hover:transform hover:scale-125',
               theme === 'dark'
                 ? 'from-yellow-400 to-orange-400'
                 : theme === 'light'

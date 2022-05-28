@@ -42,6 +42,10 @@ export const themeOptions = {
               light: ['text-black/80'],
             },
           },
+          button: {
+            dark: ['from-purple-500', 'via-blue-500', 'to-indigo-500'],
+            light: ['from-slate-100', 'via-white/90', 'to-cyan-100'],
+          },
         },
       },
       exploration: {
@@ -69,13 +73,20 @@ export const themeOptions = {
             },
             subText: {
               dark: ['text-slate-200'],
-              light: ['text-blue-500/50'],
+              light: ['text-blue-20/50'],
             },
           },
         },
         category: {
           dark: ['from-indigo-500/70', 'to-blue-500/70'],
           light: ['from-slate-50/70', 'to-white/50', 'text-slate-600/70'],
+        },
+      },
+      contact: {
+        container: {
+          dark: ['from-purple-700', 'via-indigo-700', 'to-black/80'],
+          light: ['from-slate-50', 'to-slate-50'],
+          wrapper: {},
         },
       },
     },

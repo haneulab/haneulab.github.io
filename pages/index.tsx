@@ -1,3 +1,4 @@
+import Contact from 'components/Contact';
 import Exploration from 'components/Exploration';
 import Introduction from 'components/Introduction';
 import Box from 'customs/Box';
@@ -17,6 +18,7 @@ const Homepage: NextPage = () => {
               {/* insert components */}
               <Introduction />
               <Exploration />
+              <Contact />
             </React.Fragment>
           }
         />

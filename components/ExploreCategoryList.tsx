@@ -4,28 +4,28 @@ import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { AiOutlineFundProjectionScreen } from 'react-icons/ai';
 const ExploreCategoryList: React.FC = () => {
   return (
-    <ul className="flex flex-col space-y-4">
+    <ul className="flex flex-col space-y-8">
       <ExploreCategory
-        title="Developer Life"
-        description="Learn About My Life As A Developer"
+        title="Web Development"
+        description="From affordable templates to fully customizable web applications for your business."
         icon={<FaLaptopCode className="text-4xl" />}
         href="render"
       />
       <ExploreCategory
-        title="Personal Life"
-        description="A Day In My Life"
+        title="Sustainable Management"
+        description="We provide strategies for sustainable business operation maintenance in your web applications built by us."
         icon={<BsFillPersonLinesFill className="text-4xl" />}
         href="render"
       />
       <ExploreCategory
-        title="Activities"
-        description="My Professional Involvement"
+        title="Structured Planning For Successful Marketing"
+        description="Plan your online business & user management system from scratch so that you can better understand how we manage."
         icon={<FaLayerGroup className="text-4xl" />}
         href="render"
       />
       <ExploreCategory
-        title="Development Project"
-        description="Projects"
+        title="Optimization Of SEO"
+        description="We have great knowledge and tools to provide for your SEO optimization so your website can be reached out to more users."
         icon={<AiOutlineFundProjectionScreen className="text-4xl" />}
         href="render"
       />

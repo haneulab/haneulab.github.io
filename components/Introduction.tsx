@@ -16,7 +16,7 @@ const Introduction: React.FC = () => {
         <BoxWrap
           className="px-8 py-28"
           element={
-            <div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 max-w-6xl mx-auto">
               <div>
                 <h2 className="flex flex-col items-start justify-center">
                   <span className="font-normal flex items-end space-x-2">
@@ -34,13 +34,13 @@ const Introduction: React.FC = () => {
                   <span className="font-bold flex flex-col">
                     <span
                       className={classJoin(
-                        'bg-clip-text text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-transparent bg-gradient-to-r transition-all',
+                        'bg-clip-text text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-transparent bg-gradient-to-r transition-all',
                         themeOptions.pages.index.introduction.wrapper.subText[1][
                           theme
                         ].join(' '),
                       )}
                     >
-                      Design &
+                      Design
                     </span>
                     <span
                       className={classJoin(
@@ -50,11 +50,11 @@ const Introduction: React.FC = () => {
                         ].join(' '),
                       )}
                     >
-                      Engineering
+                      & Engineering
                     </span>
                     <span
                       className={classJoin(
-                        'text-2xl lg:text-3xl transition-all text-left font-normal',
+                        'text-lg lg:text-xl xl:text-2xl font-medium transition-all text-left font-normal',
                         themeOptions.pages.index.introduction.wrapper.subText[3][
                           theme
                         ].join(' '),
@@ -64,8 +64,26 @@ const Introduction: React.FC = () => {
                     </span>
                   </span>
                 </h2>
+                <div className="mt-8 lg:mt-12 xl:mt-16">
+                  <button
+                    className={classJoin(
+                      'animate-pulse px-5 py-3 lg:px-8 lg:py-4 border-none outline-none rounded-xl ring-2 ring-transparent transition-all hover ring-offset-0 hover:ring-offset-4 hover:ring-blue-900 shadow-xl font-medium text-lg lg:text-xl bg-gradient-to-tr',
+                      themeOptions.pages.index.introduction.wrapper.button[
+                        theme
+                      ].join(' '),
+                    )}
+                  >
+                    Check Out Our Protfolio
+                  </button>
+                </div>
               </div>
-              <div></div>
+              <div className="hidden w-full lg:flex flex-col justify-center items-center">
+                <img
+                  className="w-full"
+                  src="https://i.pinimg.com/originals/f9/08/4c/f9084c82df4a5c0800d4ad011ad96b8a.png"
+                  alt="team work svg"
+                />
+              </div>
             </div>
           }
         />

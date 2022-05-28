@@ -17,8 +17,8 @@ const Exploration: React.FC = () => {
         <BoxWrap
           className="px-8 py-28"
           element={
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center">
-              <div className="max-w-xl mx-auto lg:col-span-2 relative flex  flex-col space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-16 max-w-6xl mx-auto items-center">
+              <div className="w-full mx-auto lg:col-span-2 relative flex  flex-col space-y-4">
                 <article className="flex items-center justify-center relative">
                   <span
                     className={classJoin(
@@ -49,30 +49,30 @@ const Exploration: React.FC = () => {
                 <article className="relative z-20">
                   <h3
                     className={classJoin(
-                      'text-center font-bold text-4xl mb-4 bg-clip-text text-transparent bg-gradient-to-r transition-all',
+                      'text-center font-bold text-4xl md:text-5xl lg:text-6xl mb-4 bg-clip-text text-transparent bg-gradient-to-r transition-all',
                       themeOptions.pages.index.exploration.container.wrapper.headText[
                         theme
                       ].join(' '),
                     )}
                   >
-                    Things You Can Explore About Me
+                    Explore HaneuLab
                   </h3>
                   <p
                     className={classJoin(
-                      'text-lg leading-8 text-center transition-all font-medium',
+                      'text-lg lg:text-xl lg:leading-10 leading-8 text-center transition-all font-medium',
                       themeOptions.pages.index.exploration.container.wrapper.subText[
                         theme
                       ].join(' '),
                     )}
                   >
-                    Instead presenting myself to you in two simple words,
-                    I&apos;d like to categorize things that I do so that you can
-                    better understand me in the category that you are
-                    interested.
+                    Instead presenting HaneuLab to you in two simple words,
+                    I&apos;d like to categorize things that We do so that you
+                    can better understand the services we provide that you may
+                    need.
                   </p>
                 </article>
               </div>
-              <div className="lg:col-span-1">
+              <div className="lg:col-span-3 lg:pl-8">
                 <ExploreCategoryList />
               </div>
             </div>

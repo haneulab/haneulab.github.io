@@ -7,9 +7,9 @@ const Footer: React.FC = () => {
   return (
     <footer
       className={classJoin(
-        'w-full bg-gradient-to-r transition-all',
+        'w-full bg-gradient-to-b transition-all',
         theme === 'dark'
-          ? 'to-slate-900/90 from-slate-800/90 '
+          ? 'from-black/80 to-black/60'
           : theme === 'light'
           ? 'to-slate-50/90 from-white'
           : '',
