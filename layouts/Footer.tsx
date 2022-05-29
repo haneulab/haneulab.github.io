@@ -7,11 +7,11 @@ const Footer: React.FC = () => {
   return (
     <footer
       className={classJoin(
-        'w-full bg-gradient-to-b transition-all',
+        'w-full backdrop-blur-sm bg-gradient-to-b transition-all',
         theme === 'dark'
-          ? 'from-black/80 to-black/60'
+          ? 'bg-slate-900/10'
           : theme === 'light'
-          ? 'to-slate-50/90 from-white'
+          ? 'from-slate-200 to-white/10'
           : '',
       )}
     >

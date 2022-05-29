@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
                 <h3 className="text-4xl lg:text-5xl font-bold text-center mb-4">
                   For Any Questions
                 </h3>
-                <h4 className="font-medium text-2xl lg:text-3xl text-center">
+                <h4 className="font-medium text-2xl lg:text-3xl text-center opacity-50">
                   Contact HaneuLab
                 </h4>
               </div>
@@ -34,7 +34,7 @@ const Contact: React.FC = () => {
                       Via Email
                     </span>
                     <a
-                      className="text-lg lg:text-xl xl:text-2xl"
+                      className="text-lg lg:text-xl xl:text-2xl transition-all hover hover:opacity-50"
                       href="mailto:hanchoi@ucdavis.edu"
                     >
                       hanchoi@ucdavis.edu

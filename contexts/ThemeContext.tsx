@@ -5,37 +5,62 @@ import { createContext } from 'react';
  * @returns : string<'dark' | 'light'>
  */
 export const ThemeContext = createContext<'light' | 'dark'>('dark');
+/**
+ * global context variables
+ */
+const BG = {
+  solid: {
+    dark: 'bg-slate-900',
+    light: 'bg-white/90',
+  },
+  gradient: {
+    dark: {
+      from: 'from-slate-900',
+      via: 'via-slate-800',
+      to: 'to-slate-800',
+    },
+    light: {
+      from: 'from-white/90',
+      via: 'via-slate-50',
+      to: 'to-slate-100',
+    },
+  },
+};
+const TEXT = {
+  dark: 'text-slate-50',
+  light: 'text-slate-700',
+};
 export const themeOptions = {
   layout: {
-    dark: ['bg-black/80', 'text-slate-50'],
-    light: ['bg-slate-50', 'text-black/80'],
+    dark: [BG.solid.dark, TEXT.dark],
+    light: [BG.solid.light, TEXT.light],
   },
   header: {
     themeButton: {
-      dark: ['text-slate-50'],
-      light: ['text-black/80'],
+      dark: [TEXT.dark],
+      light: [TEXT.light],
     },
   },
   pages: {
     index: {
       introduction: {
         container: {
-          dark: ['from-black/80', 'via-black/50', 'to-blue-700'],
-          light: ['from-slate-50', 'via-slate-50/70', 'to-blue-200'],
+          dark: Object.values(BG.gradient.dark),
+          light: Object.values(BG.gradient.light),
         },
         wrapper: {
           headText: {
             dark: ['text-slate-50'],
-            light: ['text-black/80'],
+            light: ['text-slate-700'],
           },
           subText: {
             1: {
-              dark: ['from-blue-500', 'to-indigo-500  '],
-              light: ['from-indigo-500', 'to-blue-500'],
+              dark: ['from-blue-500', 'to-cyan-500  '],
+              light: ['from-cyan-500', 'to-blue-500'],
             },
             2: {
-              dark: ['from-indigo-500', 'to-purple-500  '],
-              light: ['from-purple-500', 'to-indigo-500'],
+              dark: ['from-cyan-500', 'to-blue-100'],
+              light: ['from-blue-500', 'to-cyan-500'],
             },
             3: {
               dark: ['text-slate-50'],
@@ -43,33 +68,38 @@ export const themeOptions = {
             },
           },
           button: {
-            dark: ['from-purple-500', 'via-blue-500', 'to-indigo-500'],
-            light: ['from-slate-100', 'via-white/90', 'to-cyan-100'],
+            dark: ['from-blue-500', 'via-sky-400', 'to-cyan-300'],
+            light: [
+              'from-cyan-300',
+              'via-sky-400',
+              'to-blue-500',
+              'text-slate-50',
+            ],
           },
         },
       },
       exploration: {
         container: {
-          dark: ['from-blue-700', 'via-indigo-700', 'to-purple-700'],
-          light: ['from-blue-200', 'via-indigo-200', 'to-slate-50'],
+          dark: ['from-slate-800', 'via-slat-900/70', 'to-slate-900'],
+          light: ['from-slate-100', 'via-slate-100', 'to-slate-200'],
           wrapper: {
             headShapes: {
               1: {
-                dark: ['bg-blue-500/90'],
-                light: ['bg-blue-500/50'],
+                dark: ['bg-cyan-500/30'],
+                light: ['bg-cyan-700/30'],
               },
               2: {
-                dark: ['bg-indigo-500/90'],
-                light: ['bg-blue-500/50'],
+                dark: ['bg-blue-500/30'],
+                light: ['bg-blue-700/30'],
               },
               3: {
-                dark: ['bg-purple-500/90'],
-                light: ['bg-purple-500/50'],
+                dark: ['bg-slate-500/10'],
+                light: ['bg-slate-700/10'],
               },
             },
             headText: {
-              dark: ['from-blue-200', 'via-indigo-200', 'to-purple-200'],
-              light: ['from-blue-500', 'via-indigo-500', 'to-purple-500'],
+              dark: ['from-blue-500', 'to-cyan-400'],
+              light: ['from-blue-400', 'to-cyan-500'],
             },
             subText: {
               dark: ['text-slate-200'],
@@ -78,14 +108,14 @@ export const themeOptions = {
           },
         },
         category: {
-          dark: ['from-indigo-500/70', 'to-blue-500/70'],
-          light: ['from-slate-50/70', 'to-white/50', 'text-slate-600/70'],
+          dark: ['from-black/5', 'via-black/10', 'to-black/5'],
+          light: ['from-slate-500/5', 'via-slate-50/5', 'to-slate-500/5'],
         },
       },
       contact: {
         container: {
-          dark: ['from-purple-700', 'via-indigo-700', 'to-black/80'],
-          light: ['from-slate-50', 'to-slate-50'],
+          dark: ['from-slate-900', 'to-slate-900'],
+          light: ['from-slate-200', 'to-slate-200'],
           wrapper: {},
         },
       },

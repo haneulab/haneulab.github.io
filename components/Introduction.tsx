@@ -67,7 +67,7 @@ const Introduction: React.FC = () => {
                 <div className="mt-8 lg:mt-12 xl:mt-16">
                   <button
                     className={classJoin(
-                      'animate-pulse px-5 py-3 lg:px-8 lg:py-4 border-none outline-none rounded-xl ring-2 ring-transparent transition-all hover ring-offset-0 hover:ring-offset-4 hover:ring-blue-900 shadow-xl font-medium text-lg lg:text-xl bg-gradient-to-tr',
+                      ' px-5 py-3 lg:px-8 lg:py-4 border-none outline-none rounded-xl transition-all hover hover:animate-bounce shadow-xl font-medium text-lg lg:text-xl bg-gradient-to-tr',
                       themeOptions.pages.index.introduction.wrapper.button[
                         theme
                       ].join(' '),

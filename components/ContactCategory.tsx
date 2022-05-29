@@ -8,7 +8,7 @@ const ContactCategory: React.FC<ContactCategoryProps> = ({
   return (
     <a
       href={href}
-      className="w-full text-lg lg:text-xl flex justify-center items-center rounded-3xl shadow-xl bg-white/10 transition-all hover hover:bg-white/30 hover:shadow-2xl hover:shadow-black/30 backdrop-blur-sm"
+      className="w-full text-lg lg:text-xl flex justify-center items-center rounded-3xl shadow-xl  transition-all hover hover:bg-slate-100/10 hover:shadow-xl hover:shadow-black/20 backdrop-blur-sm"
     >
       <span className="w-full flex justify-between items-center px-8 py-4">
         {icon}

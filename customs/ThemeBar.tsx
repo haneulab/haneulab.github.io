@@ -12,7 +12,7 @@ const ThemeBar: React.FC<ThemeBarProps> = ({ setTheme }) => {
     setTheme(themeValue);
   };
   return (
-    <div className="w-full flex justify-end">
+    <div className="w-full lg:w-auto lg:pl-8 flex justify-end">
       <section>
         <button
           className={classJoin(
