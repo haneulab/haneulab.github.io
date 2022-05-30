@@ -1,21 +1,26 @@
-import { ThemeContext } from 'contexts/ThemeContext';
-import Layout from 'layouts/Layout';
+import Layout from '@components/Layout';
 import type { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
 import 'styles/index.css';
+import { Theme } from '@components/contexts/Theme';
+import { Language } from '@components/contexts/Language';
 
-function MyApp({ Component, pageProps }: AppProps) {
+const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const [language, setLanguage] = useState<'English' | 'Korean'>('English');
   useEffect(() => {
     setTheme('dark');
+    setLanguage('English');
   }, []);
   return (
-    <ThemeContext.Provider value={theme}>
-      <Layout setTheme={setTheme}>
-        <Component {...pageProps} />
-      </Layout>
-    </ThemeContext.Provider>
+    <Language.Provider value={language}>
+      <Theme.Provider value={theme}>
+        <Layout setters={{ setTheme, setLanguage }}>
+          <Component {...pageProps} />
+        </Layout>
+      </Theme.Provider>
+    </Language.Provider>
   );
-}
+};
 
-export default MyApp;
+export default App;

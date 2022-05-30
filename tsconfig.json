@@ -17,14 +17,9 @@
     /* custom config */
     "baseUrl": ".",
     "paths": {
-      "contexts/*": ["./contexts/*"],
-      "components/*": ["./components/*"],
-      "customs/*": ["./customs/*"],
-      "helpers/*": ["./helpers/*"],
-      "intefaces/*": ["./intefaces/*"],
-      "layouts/*": ["./layouts/*"],
-      "seo/*": ["./seo/*"],
-      "styles/*": ["./styles/*"]
+      "@components/*": ["components/*"],
+      "@libs/*": ["libs/*"],
+      "@seo/*": ["seo/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

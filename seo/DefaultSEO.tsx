@@ -1,7 +1,14 @@
-import { DefaultSEOProps } from 'interfaces/seo';
 import Head from 'next/head';
 
-const DefaultSEO: React.FC<DefaultSEOProps> = ({
+interface DefaultSEOProps {
+  pageDescription: string;
+  pageTitle: string;
+  pageKeywords: string[];
+}
+
+type DefaultSEOComponentType = React.FC<DefaultSEOProps>;
+
+const DefaultSEO: DefaultSEOComponentType = ({
   pageDescription,
   pageTitle,
   pageKeywords,
