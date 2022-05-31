@@ -3,7 +3,7 @@ import ExpertiseCardList from './ExpertiseCardList';
 
 const ExpertiseUI: ExpertiseUIComponentType = ({ setUIType }) => {
   return (
-    <div className="w-full h-full justify-center px-8 md:py-20 lg:py-28 flex flex-col items-center">
+    <div className="w-full h-full justify-center pt-20 px-8 md:py-20 lg:py-28 flex flex-col items-center">
       <h3 className="font-bold text-4xl md:text-5xl lg:text-6xl text-center mb-4">
         Technical Expertise
       </h3>

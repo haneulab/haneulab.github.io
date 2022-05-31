@@ -1,4 +1,5 @@
 import type { LayoutComponentType } from '@components/app.interface';
+import type { ScrollActionState } from '@components/app.scoll.interface';
 import Header from '@components/layouts/Header';
 import Footer from '@components/layouts/Footer';
 import MobileGroundBar from './layouts/MobileGroundBar';
@@ -11,8 +12,8 @@ const Layout: LayoutComponentType = ({ children, setters }) => {
   const theme = useContext(Theme);
 
   const [scrollBottom, setScrollBottom] = useState<boolean>(false);
-  const [scrollTopLeave, setScrollTopLeave] = useState<boolean>(false);
-
+  const [scrollTopLeave, setScrollTopLeave] =
+    useState<ScrollActionState>('top');
   useEffect(() => {
     const scrollBottomHandler = () => {
       if (
@@ -25,8 +26,12 @@ const Layout: LayoutComponentType = ({ children, setters }) => {
       }
     };
     const scrollTopLeaveHandler = () => {
-      if (window.scrollY > 50 || document.documentElement.scrollTop > 50) {
-        setScrollTopLeave(true);
+      if (window.scrollY > 100 || document.documentElement.scrollTop > 100) {
+        if (window.scrollY > 400 || document.documentElement.scrollTop > 400) {
+          setScrollTopLeave('middle');
+        } else {
+          setScrollTopLeave('top');
+        }
       } else {
         setScrollTopLeave(false);
       }

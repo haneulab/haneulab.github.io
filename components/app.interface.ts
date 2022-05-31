@@ -3,6 +3,7 @@ import {
   LanguageContextType,
   ThemeContextType,
 } from './contexts/context.interface';
+import { ScrollActionState } from './app.scoll.interface';
 
 /**
  * LayoutProps & Type
@@ -17,7 +18,7 @@ export interface LayoutProps {
 export type LayoutComponentType = React.FC<LayoutProps>;
 
 export interface HeaderProps {
-  scrollLeave: boolean;
+  scrollLeave: ScrollActionState;
   setTheme: Dispatch<SetStateAction<ThemeContextType>>;
 }
 export type HeaderComponentType = React.FC<HeaderProps>;

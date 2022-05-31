@@ -10,12 +10,17 @@ const Header: HeaderComponentType = ({ setTheme, scrollLeave }) => {
     <header
       className={cls(
         'w-full fixed top-0 z-40 backdrop-blur-md transition-all transform',
+        scrollLeave === 'top'
+          ? 'translate-y-0'
+          : scrollLeave === 'middle'
+          ? '-translate-y-full'
+          : 'translate-y-0',
       )}
     >
       <section
         className={cls(
-          'w-full flex justify-between items-center transition-all',
-          scrollLeave ? 'md:px-8 p-4' : 'px-8 py-6 ',
+          'w-full flex justify-between px-8  items-center transition-all',
+          scrollLeave ? 'py-3' : 'py-6 ',
         )}
       >
         <Logo />
