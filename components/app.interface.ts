@@ -40,8 +40,33 @@ export type MobileNavTogglerComponentType = React.FC<MobileNavTogglerProps>;
 /**
  * IndexPage Component Props & Type
  */
+type ExpertiseType = 'design' | 'service' | 'price' | 'communication';
+export interface ExpertiseCardListProps {
+  setUIType: Dispatch<SetStateAction<ExpertiseType>>;
+}
+export type ExpertiseCardListComponentType = React.FC<ExpertiseCardListProps>;
 export interface ExpertiseCardProps {
+  type: ExpertiseType;
   title: string;
   icon: JSX.Element;
+  setUIType: Dispatch<SetStateAction<ExpertiseType>>;
 }
 export type ExpertiesCardComponentType = React.FC<ExpertiseCardProps>;
+export interface ExpertiseUIProps {
+  setUIType: Dispatch<SetStateAction<ExpertiseType>>;
+}
+export type ExpertiseUIComponentType = React.FC<ExpertiseUIProps>;
+
+type DeviceType = 'mobile' | 'desktop' | 'tablet';
+export interface DeviceProps {
+  type: DeviceType;
+}
+export type DeviceComponentType = React.FC<DeviceProps>;
+export interface DeviceOptionsProp {
+  setDeviceType: Dispatch<SetStateAction<DeviceType>>;
+}
+export type DeviceOptionsComponentType = React.FC<DeviceOptionsProp>;
+export interface DeviceUIProps {
+  deviceUIOpen: ExpertiseType;
+}
+export type DeviceUIComponentType = React.FC<DeviceUIProps>;
