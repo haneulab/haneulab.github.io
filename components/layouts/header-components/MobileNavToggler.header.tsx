@@ -1,4 +1,4 @@
-import { MobileNavTogglerComponentType } from '@components/app.interface';
+import type { MobileNavTogglerComponentType } from '@components/app.interface';
 
 const MobileNavToggler: MobileNavTogglerComponentType = ({
   className,

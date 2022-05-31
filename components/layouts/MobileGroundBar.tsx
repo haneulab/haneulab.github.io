@@ -26,24 +26,33 @@ const MobileGroundBarData = [
   { text: 'Chat', icon: <BsChatDots className="text-2xl" />, href: '/chats' },
 ];
 
-const MobileGroundBar: MobileGroundBarComponentType = ({ setLanugage }) => {
+const MobileGroundBar: MobileGroundBarComponentType = ({
+  setLanugage,
+  scrollBottom,
+}) => {
   const language = useContext(Language);
   const theme = useContext(Theme);
   return (
     <React.Fragment>
-      <button
-        onClick={() =>
-          setLanugage((cur) => (cur === 'English' ? 'Korean' : 'English'))
-        }
-      >
-        {language}
-      </button>
+      <section className="hidden fixed bottom-0 p-8 w-full justify-center items-center">
+        <button
+          className="px-3 py-2 transition-all rounded-full bg-cyan-500 text-white font-bold"
+          onClick={() =>
+            setLanugage((cur) => (cur === 'English' ? 'Korean' : 'English'))
+          }
+        >
+          {language}
+        </button>
+      </section>
       <nav
         className={cls(
-          'w-full md:hidden fixed bottom-0 bg-gradient-to-b backdrop-blur-md z-50 transition-all border-t rounded-t-2xl',
+          'w-full md:hidden fixed bottom-0 bg-gradient-to-b backdrop-blur-md z-50 transition-all border-t transform rounded-t-2xl',
           theme === 'dark'
             ? 'from-black/80 to-slate-800 border-slate-800 text-slate-200'
             : 'from-white/80 to-cyan-200 border-cyan-200 text-slate-600',
+          scrollBottom
+            ? 'translate-y-full border-transparent'
+            : 'translate-y-0',
         )}
       >
         <section className="w-full grid grid-cols-4 gap-0">

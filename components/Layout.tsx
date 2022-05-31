@@ -3,12 +3,45 @@ import Header from '@components/layouts/Header';
 import Footer from '@components/layouts/Footer';
 import MobileGroundBar from './layouts/MobileGroundBar';
 import { cls } from '@libs/index.helper';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { THEME, Theme } from './contexts/Theme';
 
 const Layout: LayoutComponentType = ({ children, setters }) => {
   const { setTheme, setLanguage } = setters;
   const theme = useContext(Theme);
+
+  const [scrollBottom, setScrollBottom] = useState<boolean>(false);
+  const [scrollTopLeave, setScrollTopLeave] = useState<boolean>(false);
+
+  useEffect(() => {
+    const scrollBottomHandler = () => {
+      if (
+        window.innerHeight + window.scrollY >
+        document.body.clientHeight - 100
+      ) {
+        setScrollBottom(true);
+      } else {
+        setScrollBottom(false);
+      }
+    };
+    const scrollTopLeaveHandler = () => {
+      if (window.scrollY > 50 || document.documentElement.scrollTop > 50) {
+        setScrollTopLeave(true);
+      } else {
+        setScrollTopLeave(false);
+      }
+    };
+    window.addEventListener('scroll', () => {
+      scrollBottomHandler();
+      scrollTopLeaveHandler();
+    });
+
+    return window.removeEventListener('scroll', () => {
+      scrollBottomHandler();
+      scrollTopLeaveHandler();
+    });
+  }, [scrollBottom, scrollTopLeave]);
+
   return (
     <div
       className={cls(
@@ -17,10 +50,10 @@ const Layout: LayoutComponentType = ({ children, setters }) => {
         THEME.container[theme].text,
       )}
     >
-      <Header setTheme={setTheme} />
+      <Header scrollLeave={scrollTopLeave} setTheme={setTheme} />
       {children}
       <Footer />
-      <MobileGroundBar setLanugage={setLanguage} />
+      <MobileGroundBar scrollBottom={scrollBottom} setLanugage={setLanguage} />
     </div>
   );
 };

@@ -23,17 +23,19 @@ const ThemeNav: ThemeNavComponentType = ({ setTheme }) => {
   return (
     <nav
       className={cls(
-        'theme-nav rounded-full backdrop-blur-sm border-2 transition-all',
+        'theme-nav rounded-full backdrop-blur-sm border-2 transition-all hover hover:ring-2  hover:ring-offset-1 hover:ring-cyan-400 hover:text-cyan-400 hover:border-cyan-400',
         theme === 'dark'
           ? 'border-slate-800  text-cyan-200'
-          : 'border-cyan-200 text-cyan-400   ',
+          : 'border-slate-400 text-slate-400   ',
       )}
     >
       <section>
         <button
           onClick={(e) => onClickThemeChange(e)}
           data-theme={theme}
-          className={cls('font-semibold w-full h-full px-3 py-2')}
+          className={cls(
+            'font-semibold w-full h-full px-3 py-2 transition-all',
+          )}
         >
           {theme.toUpperCase()}
         </button>

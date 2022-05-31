@@ -6,10 +6,10 @@ import { Theme } from '@components/contexts/Theme';
 import { Language } from '@components/contexts/Language';
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const [theme, setTheme] = useState<'dark' | 'light'>('light');
   const [language, setLanguage] = useState<'English' | 'Korean'>('English');
   useEffect(() => {
-    setTheme('dark');
+    setTheme('light');
     setLanguage('English');
   }, []);
   return (

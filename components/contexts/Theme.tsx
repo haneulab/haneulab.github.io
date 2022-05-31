@@ -1,7 +1,7 @@
 import { createContext } from 'react';
 import type { ThemeContextType } from './context.interface';
 
-export const Theme = createContext<ThemeContextType>('light');
+export const Theme = createContext<ThemeContextType>('dark');
 const DARK = {
   bg: 'bg-black/80',
   text: 'text-white/80',
