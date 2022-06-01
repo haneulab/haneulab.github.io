@@ -9,7 +9,7 @@ import type { ExpertiseCardListComponentType } from '@components/app.interface';
 
 const ExpertiesCardList: ExpertiseCardListComponentType = ({ setUIType }) => {
   return (
-    <div className="flex overflow-x-scroll pb-8 space-x-4 md:space-x-0 md:flex-col items-center w-full md:space-y-6 lg:space-y-8">
+    <div className="flex space-x-4 md:space-x-0 md:flex-col items-center w-full md:space-y-0 lg:space-y-8">
       <ExpertiesCard
         setUIType={setUIType}
         type="design"

@@ -77,7 +77,7 @@ const Homepage: NextPage = () => {
           THEME.container[theme].text,
         )}
       >
-        <section className="w-full min-h-screen relative z-10 grid grid-cols-1 lg:grid-cols-2 mx-auto">
+        <section className="w-full relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 z-10 mx-auto">
           <ExpertiseUI setUIType={setUIType} />
           {/* DeviceUI open on uiType === 'design' : default */}
           <DeviceUI deviceUIOpen={uiType} />

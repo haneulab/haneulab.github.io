@@ -6,7 +6,7 @@ import {
 } from 'react-icons/ai';
 const DeviceOption: DeviceOptionsComponentType = ({ setDeviceType }) => {
   return (
-    <div className="absolute w-full bottom-4 md:bottom-16 max-w-md mx-auto  bg-gradient-to-br from-white/0 via-white/0 to-white/0  rounded-md text-indigo-500">
+    <div className="absolute w-full bottom-14 max-w-md mx-auto  bg-gradient-to-br from-white/0 via-white/0 to-white/0  rounded-md text-indigo-500">
       <section className="px-8 py-4 w-full grid grid-cols-3 gap-4 items-center">
         <div
           onClick={() => setDeviceType('desktop')}

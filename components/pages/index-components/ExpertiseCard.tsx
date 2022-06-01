@@ -21,7 +21,7 @@ const ExpertiseCard: ExpertiesCardComponentType = ({
       )}
     >
       {icon}
-      <span className="w-full text-xs sm:text-base md:text-lg lg:text-xl">
+      <span className="w-max text-xs sm:text-base md:text-lg lg:text-xl">
         {title}
       </span>
     </div>

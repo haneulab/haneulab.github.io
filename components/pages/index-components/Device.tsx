@@ -1,19 +1,49 @@
 /* eslint-disable @next/next/no-img-element */
 import type { DeviceComponentType } from '@components/app.interface';
+import { cls } from '@libs/index.helper';
+import { useEffect, useState } from 'react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { FiMenu } from 'react-icons/fi';
 const Device: DeviceComponentType = ({ type }) => {
-  console.log(type);
+  const [width, setWidth] = useState<string>('max-w-xs');
+  const [height, setHeight] = useState<string>('aspect-h-9 max-h-[960px]');
+  const deviceMatch = (setType: 'mobile' | 'desktop' | 'tablet') => {
+    switch (setType) {
+      case 'mobile':
+        setWidth('max-w-xs');
+        setHeight('aspect-h-9 max-h-[960px]');
+        break;
+      case 'desktop':
+        setWidth('max-w-xs');
+        setHeight('aspect-h-9 max-h-[960px]');
+        break;
+      case 'tablet':
+        setWidth('max-w-xs');
+        setHeight('aspect-h-9 max-h-[960px]');
+        break;
+      default:
+        break;
+    }
+  };
+  useEffect(() => {
+    deviceMatch(type);
+  }, [type]);
   return (
-    <div className="w-full max-w-xs h-full max-h-[680px] p-2 bg-gradient-to-r from-black/90 via-zinc-800 to-black/90 mx-auto border border-slate-50/10 shadow-2xl rounded-2xl shadow-blue-900/25">
-      <div className="relative w-full h-full flex flex-col justify-center border p-2 bg-black/50 rounded-xl border-slate-50/10">
+    <div
+      className={cls(
+        'w-full transition-all p-2 bg-gradient-to-r from-black/90 via-zinc-800 to-black/90 mx-auto border border-slate-50/10 shadow-2xl rounded-2xl shadow-blue-900/25',
+        width,
+        height,
+      )}
+    >
+      <div className="relative w-full flex flex-col justify-center border p-2 bg-black/50 rounded-xl border-slate-50/10">
         <span className="absolute left-1/2 transform -translate-x-1/2 top-2 w-10 h-2 rounded-full bg-white/10 border border-slate-500/50" />
-        <div className="w-full overflow-hidden h-5/6 bg-gradient-to-tr from-blue-600 via-indigo-600 to-violet-600 text-white/90 relative">
+        <div className="w-full rounded-lg overflow-scroll h-full bg-gradient-to-tr from-blue-600 via-indigo-600 to-violet-600 text-white/90 relative">
           <div className="p-4 flex justify-between items-center">
             <h5 className="font-bold text-lg">Shoppest</h5>
             <FiMenu className="text-xl" />
           </div>
-          <div className="w-full h-full flex flex-col items-center overflow-hidden">
+          <div className="w-full h-full flex flex-col items-center overflow-y-scroll">
             <section className="w-11/12 mx-auto mb-4 rounded-full border-2 border-blue-400/50 px-4 py-2 flex items-center overflow-hidden">
               <span className="text-xs text-slate-400">Search the product</span>
             </section>
