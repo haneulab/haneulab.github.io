@@ -15,11 +15,18 @@
     "jsx": "preserve",
     "incremental": true,
     /* custom config */
-    "baseUrl": ".",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "baseUrl": "src",
     "paths": {
       "@components/*": ["components/*"],
       "@libs/*": ["libs/*"],
-      "@seo/*": ["seo/*"]
+      "@seo/*": ["seo/*"],
+      "@apptypes/*": ["types/*"],
+      "@hooks/*": ["hooks/*"],
+      "@context/*": ["context/*"],
+      "@definitions/*": ["definitions/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
