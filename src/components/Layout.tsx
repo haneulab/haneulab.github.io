@@ -8,10 +8,10 @@ const Layout: LayoutComponentType = ({ children }) => {
   return (
     <div
       className={mergeClasses(
-        'w-full transition-all transform min-h-screen',
+        'w-full transition-all transform relative',
         theme === 'dark'
-          ? 'bg-slate-900 text-slate-50'
-          : 'bg-slate-100 text-slate-700',
+          ? 'bg-black/90 text-slate-50'
+          : 'bg-slate-50 text-black/90',
       )}
     >
       {children}

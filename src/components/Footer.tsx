@@ -6,10 +6,10 @@ const Footer: React.FC = () => {
   return (
     <footer
       className={mergeClasses(
-        'w-full transition-all border-t',
+        'w-full transition-all border-t ',
         theme === 'dark'
-          ? 'bg-slate-900 text-emerald-400 border-emerald-500/50'
-          : 'bg-emerald-400 text-slate-100 border-emerald-500/0',
+          ? 'bg-black/50 text-slate-200/50 border-slate-200/10'
+          : 'bg-slate-100/50 text-slate-600/50 border-slate-200/90',
       )}
     >
       <section className="w-full px-8 py-20 flex flex-col justify-center items-center">
