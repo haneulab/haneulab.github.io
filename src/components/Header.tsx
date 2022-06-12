@@ -7,7 +7,7 @@ const Header: React.FC = () => {
   return (
     <header
       className={mergeClasses(
-        'fixed top-0 w-full z-50 transition-all transform backdrop-blur-sm',
+        'sticky top-0 w-full z-50 transition-all transform backdrop-blur-sm bg-transparent',
       )}
     >
       <section

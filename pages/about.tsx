@@ -32,9 +32,9 @@ const Aboutpage: NextPage = () => {
           <Header />
           <div
             data-page="about"
-            className="w-full min-h-screen flex flex-col justify-center"
+            className="w-full flex flex-col justify-center"
           >
-            <section className="w-full max-w-4xl mx-auto h-full px-8 py-36 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <section className="w-full max-w-4xl mx-auto h-full px-8 pb-36 pt-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
               <div className="lg:col-span-1">
                 <div className="mb-8">
                   <img
@@ -70,8 +70,8 @@ const Aboutpage: NextPage = () => {
                       className={mergeClasses(
                         'w-max animate-pulse font-medium transition-all hover hover:text-blue-400 flex justify-center space-x-2 items-center',
                         theme === 'dark'
-                          ? 'text-slate-200/50 '
-                          : 'text-slate-600/50  ',
+                          ? 'text-blue-400/80 '
+                          : 'text-blue-600/80  ',
                       )}
                     >
                       <span>Load My Projects</span>
