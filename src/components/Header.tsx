@@ -5,11 +5,7 @@ import Link from 'next/link';
 const Header: React.FC = () => {
   const { theme, swapTheme } = useTheme();
   return (
-    <header
-      className={mergeClasses(
-        'sticky top-0 w-full z-50 transition-all transform backdrop-blur-sm bg-transparent',
-      )}
-    >
+    <header className="fixed top-0 w-full z-50 transition-all transform backdrop-blur-sm bg-transparent">
       <section
         className={mergeClasses(
           'p-8 transition-all transform flex justify-between items-center',
@@ -18,7 +14,14 @@ const Header: React.FC = () => {
         <div>
           <h1 className="flex flex-col items-start">
             <Link href="/">
-              <a className="font-bold text-4xl mb-1">HL</a>
+              <a
+                className={mergeClasses(
+                  'transition-all font-bold text-4xl mb-2',
+                  theme === 'dark' ? 'text-white' : 'text-black/90',
+                )}
+              >
+                HL
+              </a>
             </Link>
             <span className="relative w-full flex flex-col justify-center items-center">
               <span

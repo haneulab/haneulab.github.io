@@ -24,14 +24,14 @@ const Homepage: NextPage = () => {
           'Business Marketing',
         ]}
       />
+      <Header />
       <Layout>
         <React.Fragment>
-          <Header />
           <div
             data-page="index"
-            className="w-full relative z-10 flex flex-col justify-center"
+            className="w-full relative z-10 flex flex-col justify-center items-center min-h-screen"
           >
-            <section className="w-full h-full px-8 pt-8 pb-36 grid grid-cols-1">
+            <section className="w-full h-full px-8 py-36 grid grid-cols-1">
               <div className="w-full h-full flex flex-col justify-center items-center">
                 <h2 className="font-bold text-4xl mb-4 text-center">
                   Hi, My name is Haneul Choi.

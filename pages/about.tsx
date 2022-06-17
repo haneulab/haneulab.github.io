@@ -27,14 +27,14 @@ const Aboutpage: NextPage = () => {
           'Business Marketing',
         ]}
       />
+      <Header />
       <Layout>
         <React.Fragment>
-          <Header />
           <div
             data-page="about"
-            className="w-full flex flex-col justify-center"
+            className="w-full flex flex-col justify-center min-h-screen"
           >
-            <section className="w-full max-w-4xl mx-auto h-full px-8 pb-36 pt-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <section className="w-full max-w-4xl mx-auto h-full px-8 py-36 grid grid-cols-1 lg:grid-cols-3 gap-8">
               <div className="lg:col-span-1">
                 <div className="mb-8">
                   <img
