@@ -2,6 +2,7 @@ import reactClassname from '@/libs/reactClassname';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
+import { BsGithub, BsLinkedin } from 'react-icons/bs';
 
 interface RouteData {
   href: string;
@@ -26,10 +27,18 @@ const Header: React.FC = () => {
     <React.Fragment>
       <aside
         className={reactClassname(
-          'w-full fixed h-screen top-0 flex flex-col justify-center transition-all ease-in',
+          'transition-all transform ease-in fixed top-0 h-screen z-30 bg-white/90',
           asideOpen
-            ? ' opacity-100 bg-white z-40'
-            : '-z-40 opacity-0 bg-transparent',
+            ? 'translate-x-0 opacity-100 w-full'
+            : '-translate-x-full opacity-0 w-0',
+        )}
+      />
+      <aside
+        className={reactClassname(
+          'w-10/12 border-r fixed h-screen top-0 flex md:hidden flex-col justify-center transition-all transform ease-in',
+          asideOpen
+            ? ' opacity-100 bg-white z-40 translate-x-0 ease-in'
+            : '-z-40 opacity-0 bg-transparent -translate-x-full ease-in',
         )}
       >
         <section className="p-8">
@@ -45,7 +54,7 @@ const Header: React.FC = () => {
                 <a
                   className={reactClassname(
                     'font-normal text-xl capitalize transition-all',
-                    router.pathname.includes(eachRoute.href)
+                    router.pathname === eachRoute.href
                       ? 'text-gray-800 pl-2 border-l-4 border-gray-600'
                       : 'text-gray-400 pl-0 border-l-0',
                   )}
@@ -55,31 +64,72 @@ const Header: React.FC = () => {
               </Link>
             ))}
           </ul>
-          <ul className="mt-8 pt-4 border-t-2 flex items-center space-x-4">
+          <ul className="mt-8 pt-4 border-t-2 flex items-center space-x-4 text-gray-700">
             <li>
-              <a className="font-medium text-lg px-3 py-2 border-2 border-gray-200 text-gray-400">
-                Github
+              <a
+                href="https://github.com/haneulab"
+                className="text-3xl md:text-4xl"
+              >
+                <BsGithub />
               </a>
             </li>
             <li>
-              <a className="font-medium text-lg px-3 py-2 border-2 border-gray-200 text-gray-400">
-                Linkedin
+              <a
+                href="https://linkedin.com/in/haneulab"
+                className="text-3xl md:text-4xl"
+              >
+                <BsLinkedin />
               </a>
             </li>
           </ul>
         </section>
       </aside>
-      <header className="fixed z-50 top-0 w-full bg-white border-b border-gray-200">
-        <section className="px-8 py-6 md:py-3 md:px-16 lg:px-24 flex justify-between items-center">
+      <header
+        className={reactClassname(
+          'fixed z-50 bg-white lg:bg-transparent lg:w-max top-0 w-full lg:grid lg:grid-cols-10 transition-all border-b',
+          asideOpen ? ' border-gray-200' : 'border-transparent',
+        )}
+      >
+        <section className="w-full px-8 py-6 md:px-16 lg:col-span-10 lg:px-24 flex justify-between lg:space-x-8 items-center">
           <h1>
             <Link href="/">
               <a
                 className={reactClassname(
-                  'font-medium text-3xl transition-all',
-                  asideOpen ? 'text-gray-400' : '',
+                  'font-medium text-3xl md:text-4xl lg:text-5xl transition-all flex items-center relative',
                 )}
               >
-                HaneuLab
+                <span
+                  className={reactClassname(
+                    'w-full h-full absolute rounded-full z-10 transform scale-110 transition-all',
+                    asideOpen
+                      ? 'translate-x-0 bg-black/5'
+                      : '-translate-x-[100%] bg-white',
+                  )}
+                />
+                <span
+                  className={reactClassname(
+                    'transition-all z-20',
+                    asideOpen ? 'text-gray-400' : 'text-gray-700',
+                  )}
+                >
+                  H
+                </span>
+                <span
+                  className={reactClassname(
+                    'transition-all z-20',
+                    asideOpen ? 'text-gray-400' : 'text-gray-700',
+                  )}
+                >
+                  L
+                </span>
+                <span
+                  className={reactClassname(
+                    'transition-all z-20',
+                    asideOpen ? 'text-gray-400' : 'text-gray-700',
+                  )}
+                >
+                  .
+                </span>
               </a>
             </Link>
           </h1>
@@ -117,7 +167,26 @@ const Header: React.FC = () => {
               />
             </button>
           </nav>
+          <nav className="hidden fixed z-50 top-8 md:right-8 lg:right-16 xl:right-24 md:flex w-max items-center space-x-4 bg-white/80 backdrop-blur-sm">
+            <ul className="w-max flex items-center space-x-8 px-8 py-2">
+              {Routes.map((eachRoute, routeIndex) => (
+                <Link key={routeIndex} href={eachRoute.href}>
+                  <a
+                    className={reactClassname(
+                      'font-normal text-xl capitalize transition-all hover  hover:text-gray-600',
+                      router.pathname === eachRoute.href
+                        ? 'text-gray-400 '
+                        : ' ',
+                    )}
+                  >
+                    {eachRoute.textContent}
+                  </a>
+                </Link>
+              ))}
+            </ul>
+          </nav>
         </section>
+        <section className="lg:col-span-6 bg-transaprent w-full"></section>
       </header>
     </React.Fragment>
   );

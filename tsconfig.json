@@ -23,6 +23,7 @@
       "@/layouts/*": ["layouts/*"],
       "@/components/*": ["components/*"],
       "@/libs/*": ["libs/*"],
+      "@/reuse/*": ["reuse/*"],
       "@/seo/*": ["seo/*"]
     }
   },
