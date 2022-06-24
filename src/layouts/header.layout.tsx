@@ -27,10 +27,10 @@ const Header: React.FC = () => {
     <React.Fragment>
       <aside
         className={reactClassname(
-          'transition-all transform ease-in fixed top-0 h-screen z-30 bg-white/90',
+          'transition-all transform ease-in fixed top-0 h-screen bg-white/90',
           asideOpen
-            ? 'translate-x-0 opacity-100 w-full'
-            : '-translate-x-full opacity-0 w-0',
+            ? 'translate-x-0 opacity-100 w-full z-30'
+            : '-translate-x-full opacity-0 w-0 -z-30',
         )}
       />
       <aside
@@ -95,7 +95,8 @@ const Header: React.FC = () => {
             <Link href="/">
               <a
                 className={reactClassname(
-                  'font-medium text-3xl md:text-4xl lg:text-5xl transition-all flex items-center relative',
+                  'font-medium text-3xl md:text-4xl lg:text-5xl transition-all flex items-center relative transform',
+                  asideOpen ? 'rotate-[360deg]' : 'rotate-0',
                 )}
               >
                 <span

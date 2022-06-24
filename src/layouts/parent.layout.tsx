@@ -9,7 +9,7 @@ const ParentLayout: React.FC<ParentLayoutProps> = ({
   children,
 }) => {
   return (
-    <div id="layout">
+    <div id="layout" className="w-full relative">
       {header}
       {children}
       {footer}
