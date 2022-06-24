@@ -1,0 +1,16 @@
+/**
+** google font api
+**/
+@import url('https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100;300;400;500;600;700&display=swap');
+
+html,
+body {
+    font-family: 'Anek Latin', sans-serif;
+}
+
+/**
+** tailwind imports
+**/
+@tailwind base;
+@tailwind utilities;
+@tailwind components;

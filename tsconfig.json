@@ -20,13 +20,10 @@
     "strictNullChecks": true,
     "baseUrl": "src",
     "paths": {
-      "@components/*": ["components/*"],
-      "@libs/*": ["libs/*"],
-      "@seo/*": ["seo/*"],
-      "@apptypes/*": ["types/*"],
-      "@hooks/*": ["hooks/*"],
-      "@context/*": ["context/*"],
-      "@definitions/*": ["definitions/*"]
+      "@/layouts/*": ["layouts/*"],
+      "@/components/*": ["components/*"],
+      "@/libs/*": ["libs/*"],
+      "@/seo/*": ["seo/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

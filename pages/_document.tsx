@@ -3,7 +3,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body>
+      <body className="w-full bg-white text-black">
         <Main />
         <NextScript />
       </body>

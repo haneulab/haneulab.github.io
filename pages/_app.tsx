@@ -1,13 +1,8 @@
-import { ThemeProvider } from '@hooks/useTheme';
 import type { AppProps } from 'next/app';
-import '../src/index.css';
+import '../styles/tailwind.css';
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
-  return (
-    <ThemeProvider>
-      <Component {...pageProps} />
-    </ThemeProvider>
-  );
+  return <Component {...pageProps} />;
 };
 
 export default App;
