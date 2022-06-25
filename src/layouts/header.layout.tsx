@@ -35,7 +35,7 @@ const Header: React.FC = () => {
       />
       <aside
         className={reactClassname(
-          'w-10/12 border-r fixed h-screen top-0 flex md:hidden flex-col justify-center transition-all transform ease-in',
+          'w-full fixed h-screen top-0 flex md:hidden flex-col justify-center transition-all transform ease-in',
           asideOpen
             ? ' opacity-100 bg-white z-40 translate-x-0 ease-in'
             : '-z-40 opacity-0 bg-transparent -translate-x-full ease-in',
@@ -86,7 +86,7 @@ const Header: React.FC = () => {
       </aside>
       <header
         className={reactClassname(
-          'fixed z-50 bg-white lg:bg-transparent lg:w-max top-0 w-full lg:grid lg:grid-cols-10 transition-all border-b',
+          'fixed z-50 bg-white/90 top-0 w-full lg:grid lg:grid-cols-10 transition-all border-b',
           asideOpen ? ' border-gray-200' : 'border-transparent',
         )}
       >
@@ -168,26 +168,7 @@ const Header: React.FC = () => {
               />
             </button>
           </nav>
-          <nav className="hidden fixed z-50 top-8 md:right-8 lg:right-16 xl:right-24 md:flex w-max items-center space-x-4 bg-white/80 backdrop-blur-sm">
-            <ul className="w-max flex items-center space-x-8 px-8 py-2">
-              {Routes.map((eachRoute, routeIndex) => (
-                <Link key={routeIndex} href={eachRoute.href}>
-                  <a
-                    className={reactClassname(
-                      'font-normal text-xl capitalize transition-all hover  hover:text-gray-600',
-                      router.pathname === eachRoute.href
-                        ? 'text-gray-400 '
-                        : ' ',
-                    )}
-                  >
-                    {eachRoute.textContent}
-                  </a>
-                </Link>
-              ))}
-            </ul>
-          </nav>
         </section>
-        <section className="lg:col-span-6 bg-transaprent w-full"></section>
       </header>
     </React.Fragment>
   );

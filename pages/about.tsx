@@ -22,13 +22,11 @@ const Aboutpage: NextPage = () => {
         ]}
       />
       <Layout.page>
-        <Transition>
-          <main
-            id="about-page"
-            className="w-full min-h-screen flex flex-col justify-center items-center"
-          >
-            Hello World!
-          </main>
+        <Transition
+          id="about-page"
+          className="w-full min-h-screen flex flex-col justify-center items-center"
+        >
+          <p>Hello World!</p>
         </Transition>
       </Layout.page>
     </React.Fragment>
