@@ -18,7 +18,7 @@ const CardContainer: React.FC<CardContainerProps> = ({
         {link ? (
           <div className="mt-8 w-full">
             <a
-              className="font-medium text-lg border-l-4 pl-4 border-gray-500 transition-all hover hover:border-l-8 hover:text-gray-400"
+              className="font-medium text-lg border-l-4 pl-4 text-amber-400 border-amber-400 transition-all hover hover:border-l-8 hover:text-amber-300"
               href={link}
             >
               View Demo
