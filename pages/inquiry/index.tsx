@@ -24,6 +24,7 @@ import PageSEO from '@/seo/page.seo';
  * motion
  */
 import { motion } from 'framer-motion';
+import Loading from '@/reuse/loading.reuse';
 
 const Inquirypage: NextPage = () => {
   const [fullname, setFullname] = useState<string>('');
@@ -33,9 +34,12 @@ const Inquirypage: NextPage = () => {
   const [sendError, setSendError] = useState<
     boolean | { isError: boolean; error: number; message: string }
   >(false);
+  const [formStatus, setFormStatus] = useState<
+    'before' | 'sending' | 'fetching' | 'after'
+  >('before');
   const onEmailSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
-
+    setFormStatus('sending');
     // validation here
     if (!fullname || !email || !message) {
       setSendError({
@@ -59,8 +63,9 @@ const Inquirypage: NextPage = () => {
       },
       method: 'POST',
     });
+    setFormStatus('fetching');
 
-    if (!res.ok) {
+    if (!res?.ok) {
       setSendError({
         isError: true,
         error: -1,
@@ -74,6 +79,7 @@ const Inquirypage: NextPage = () => {
         message: '',
       });
     }
+    setFormStatus('after');
     setEmail('');
     setFullname('');
     setSubject('');
@@ -101,6 +107,14 @@ const Inquirypage: NextPage = () => {
       <Transition id="inquiry-page" className="w-full relative">
         <Layout.page>
           <>
+            <Loading
+              loadingText={
+                formStatus === 'before' || formStatus === 'sending'
+                  ? 'Email Resolving...'
+                  : 'Getting Response...'
+              }
+              viewIf={formStatus === 'sending' || formStatus == 'fetching'}
+            />
             <form
               onSubmit={(e) => onEmailSubmit(e)}
               className={reactClassname(

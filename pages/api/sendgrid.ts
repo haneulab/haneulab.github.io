@@ -40,7 +40,7 @@ const sendEmail: SendEmailAction = async (req: Request, res: Response) => {
             style="color: #222;font-weight: bold;margin-bottom: 0.5rem;font-size: 20px;"
             >HaneuLab Inquiry Message From ${fullname} </h3>
             <p class="subhead-container"
-            style="font-family: sans-serif;display: block;font-size: 16px;margin-bottom: 1rem;color: #444;"
+            style="font-family: sans-serif;display: block;font-size: 16px;margin-bottom: 1rem;color: #444; padding: 20px; border: 1px solid lightgray;"
             >${fullname}'s email : <strong>${email}</strong></p>
             <div class="message-container"
             style="color: gray;font-size: 14px;line-height: 1.7;"
