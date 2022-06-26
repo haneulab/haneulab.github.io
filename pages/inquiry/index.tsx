@@ -1,7 +1,7 @@
 /**
  * react
  */
-import React, { SyntheticEvent, useState } from 'react';
+import React, { SyntheticEvent, useEffect, useState } from 'react';
 /**
  * next
  */
@@ -37,6 +37,12 @@ const Inquirypage: NextPage = () => {
   const [formStatus, setFormStatus] = useState<
     'before' | 'sending' | 'fetching' | 'after'
   >('before');
+  useEffect(() => {
+    if (formStatus === 'after') {
+      window.scrollTo(0, 0);
+      setFormStatus('before');
+    }
+  }, [formStatus]);
   const onEmailSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
     setFormStatus('sending');
@@ -47,6 +53,7 @@ const Inquirypage: NextPage = () => {
         error: -2,
         message: 'Unable to send the email | Invalid Input(s)',
       });
+      setFormStatus('after');
       return;
     }
     // then
@@ -71,6 +78,7 @@ const Inquirypage: NextPage = () => {
         error: -1,
         message: 'Unable to send the email | Internal Response Error',
       });
+      setFormStatus('after');
       return;
     } else {
       setSendError({
@@ -87,6 +95,7 @@ const Inquirypage: NextPage = () => {
   };
   const onTryAgainClick = () => {
     setSendError(false);
+    window.scrollTo(0, 0);
   };
   return (
     <React.Fragment>
@@ -137,7 +146,7 @@ const Inquirypage: NextPage = () => {
                 name="fullname"
                 value={fullname}
                 onChange={(e) => setFullname(e.target.value)}
-                className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-amber-600 font-light text-gray-700"
+                className="bg-transparent border-b py-2 pl-4 focus:outline-none rounded-none focus:ring-1 ring-amber-600 font-light text-gray-700"
               />
 
               <label
@@ -151,7 +160,7 @@ const Inquirypage: NextPage = () => {
                 name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-amber-600 font-light text-gray-700"
+                className="bg-transparent border-b py-2 pl-4 focus:outline-none rounded-none focus:ring-1 ring-amber-600 font-light text-gray-700"
               />
 
               <label
@@ -165,7 +174,7 @@ const Inquirypage: NextPage = () => {
                 name="subject"
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
-                className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-amber-600 font-light text-gray-700"
+                className="bg-transparent border-b py-2 pl-4 focus:outline-none rounded-none focus:ring-1 ring-amber-600 font-light text-gray-700"
               />
 
               <label
@@ -176,7 +185,7 @@ const Inquirypage: NextPage = () => {
               </label>
               <textarea
                 name="message"
-                className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-amber-600 font-light text-gray-700"
+                className="bg-transparent border-b py-2 pl-4 focus:outline-none rounded-none focus:ring-1 ring-amber-600 font-light text-gray-700"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>
