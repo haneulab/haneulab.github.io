@@ -1,5 +1,5 @@
+import TransitionLink from '@/reuse/link.reuse';
 import { motion, Variants } from 'framer-motion';
-import Link from 'next/link';
 
 const imgVariants: Variants = {
   offscreen: {
@@ -32,11 +32,9 @@ const FlowImage: React.FC = () => {
         ))}
       </section>
 
-      <Link href="/photos">
-        <a className="absolute w-max h-max px-8 py-4 rounded-full bg-black/80 backdrop-blur-sm hover hover:bg-amber-400/80 hover:text-black/80 shadow-2xl text-white text-xl top-1/2 left-1/2 transform transition-all -translate-x-1/2  -translate-y-1/2">
-          View More Photos
-        </a>
-      </Link>
+      <div className="absolute top-1/2 left-1/2 transition-all transform -translate-x-1/2 -translate-y-1/2 w-max h-max">
+        <TransitionLink href="/photos" textContent="View More Photos" />
+      </div>
     </motion.div>
   );
 };

@@ -1,5 +1,4 @@
-import Link from 'next/link';
-
+import TransitionLink from '@/reuse/link.reuse';
 const Hero: React.FC = () => {
   return (
     <div className="relative w-full h-[58vh] flex flex-col justify-center">
@@ -19,11 +18,7 @@ const Hero: React.FC = () => {
           Freelancer & Project Developer
         </p>
         <div className="mt-8">
-          <Link href="/projects">
-            <a className="cursor-pointer w-max flex items-center px-8 py-3 font-medium bg-black/80 text-gray-50 transition-all hover:bg-black/60">
-              View All My Projects
-            </a>
-          </Link>
+          <TransitionLink href="/projects" textContent="View All My Projects" />
         </div>
       </section>
     </div>

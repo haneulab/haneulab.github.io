@@ -1,9 +1,9 @@
 import reactClassname from '@/libs/reactClassname';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BsGithub, BsLinkedin } from 'react-icons/bs';
-
+import { TiBusinessCard } from 'react-icons/ti';
 interface RouteData {
   href: string;
   textContent: string;
@@ -23,6 +23,20 @@ const Header: React.FC = () => {
   const onClickAsideToggle = () => {
     setAsideOpen((cur) => !cur);
   };
+  const [scrollPosition, setSrollPosition] = useState(0);
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setSrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <React.Fragment>
       <aside
@@ -86,17 +100,30 @@ const Header: React.FC = () => {
       </aside>
       <header
         className={reactClassname(
-          'fixed z-50 bg-white/90 top-0 w-full lg:grid lg:grid-cols-10 transition-all border-b',
-          asideOpen ? ' border-gray-200' : 'border-transparent',
+          'fixed z-50 bg-white/90 top-0 w-full lg:shadow-none lg:grid lg:grid-cols-10 transition-all border-b',
+          asideOpen ? ' border-gray-200 shadow-none' : 'border-transparent',
+          scrollPosition > 50 && asideOpen
+            ? 'shadow-none'
+            : scrollPosition > 50
+            ? 'shadow-md'
+            : '',
         )}
       >
-        <section className="w-full px-8 py-6 md:px-16 lg:col-span-10 lg:px-24 flex justify-between lg:space-x-8 items-center">
+        <section
+          className={reactClassname(
+            'px-8 md:px-16 lg:px-24 w-full lg:col-span-10 flex justify-between lg:space-x-8 items-center transition-all',
+            scrollPosition > 50 ? 'py-4' : ' py-6',
+          )}
+        >
           <h1>
             <Link href="/">
               <a
                 className={reactClassname(
-                  'font-medium text-3xl md:text-4xl lg:text-5xl transition-all flex items-center relative transform',
+                  'font-medium transition-all flex items-center relative transform',
                   asideOpen ? 'rotate-[360deg]' : 'rotate-0',
+                  scrollPosition > 50
+                    ? 'text-2xl md:text-3xl lg:text-4xl'
+                    : 'text-3xl md:text-4xl lg:text-5xl',
                 )}
               >
                 <span
@@ -128,7 +155,7 @@ const Header: React.FC = () => {
           </h1>
           <nav className="relative flex md:hidden items-center justify-center space-x-4">
             <Link href="/inquiry">
-              <a className="text-base px-4 py-2 border border-gray-400 text-gray-400">
+              <a className="text-base px-4 py-2 border border-amber-500 text-amber-500">
                 Inquiry
               </a>
             </Link>
@@ -163,13 +190,21 @@ const Header: React.FC = () => {
             </button>
           </nav>
           <nav className="hidden md:flex items-center justify-center space-x-4 lg:space-x-6">
-            {Routes.map((eachRoute, routeIndex) => (
-              <Link href={eachRoute.href} key={routeIndex}>
-                <a className="capitalize lg:text-lg xl:text-xl transition-all hover hover:text-gray-400">
-                  {eachRoute.textContent}
-                </a>
-              </Link>
-            ))}
+            <ul className="flex items-center justify-center space-x-4 lg:space-x-6">
+              {Routes.map((eachRoute, routeIndex) => (
+                <Link href={eachRoute.href} key={routeIndex}>
+                  <a className="capitalize lg:text-lg xl:text-xl transition-all hover hover:text-gray-400">
+                    {eachRoute.textContent}
+                  </a>
+                </Link>
+              ))}
+            </ul>
+            <Link href="/inquiry">
+              <a className="px-3 py-2 rounded-full border font-normal hover text-amber-500 border-amber-500 hover:text-black/80 hover:border-black/80 transition-all flex items-center space-x-2">
+                <TiBusinessCard />
+                <span>Business Inquries</span>
+              </a>
+            </Link>
           </nav>
         </section>
       </header>
