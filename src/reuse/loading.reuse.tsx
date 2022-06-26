@@ -1,6 +1,11 @@
+/**
+ * libs
+ */
 import reactClassname from '@/libs/reactClassname';
+/**
+ * motion
+ */
 import { motion } from 'framer-motion';
-
 /**
  * local interfaces & types
  */

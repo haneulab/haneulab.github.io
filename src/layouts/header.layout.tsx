@@ -168,9 +168,9 @@ const Header: React.FC = () => {
             </Link>
           </h1>
           <nav className="relative flex md:hidden items-center justify-center space-x-4">
-            <Link href="/inquiry">
+            <Link href={router.pathname.includes('inquiry') ? '/' : '/inquiry'}>
               <a className="text-base px-4 py-2 border border-amber-500 text-amber-500">
-                Inquiry
+                {router.pathname.includes('inquiry') ? 'Home' : 'Inquiry'}
               </a>
             </Link>
             <button
@@ -213,10 +213,18 @@ const Header: React.FC = () => {
                 </Link>
               ))}
             </ul>
-            <Link href="/inquiry">
+            <Link
+              href={
+                router.pathname.includes('inquiry') ? '/projects' : '/inquiry'
+              }
+            >
               <a className="px-3 py-2 rounded-full border font-normal hover text-amber-500 border-amber-500 hover:text-black/80 hover:border-black/80 transition-all flex items-center space-x-2">
                 <TiBusinessCard />
-                <span>Business Inquries</span>
+                <span>
+                  {router.pathname.includes('inquiry')
+                    ? 'Projects'
+                    : 'Business Inquries'}
+                </span>
               </a>
             </Link>
           </nav>
