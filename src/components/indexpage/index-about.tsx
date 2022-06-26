@@ -1,4 +1,8 @@
+/**
+ * icons
+ */
 import { IoPersonOutline } from 'react-icons/io5';
+
 import CardContainer from './card-container';
 const About: React.FC = () => {
   return (

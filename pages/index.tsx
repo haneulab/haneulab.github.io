@@ -1,12 +1,21 @@
+/**
+ * react
+ */
+import React from 'react';
+/**
+ * types
+ */
+import type { NextPage } from 'next';
+/**
+ * components
+ */
+import Layout from '@/layouts/layout';
+import Transition from '@/reuse/transition.reuse';
+import PageSEO from '@/seo/page.seo';
 import About from '@/components/indexpage/index-about';
 import FlowImage from '@/components/indexpage/index-flowImage';
 import Hero from '@/components/indexpage/index-hero';
 import Projects from '@/components/indexpage/index-projects';
-import Layout from '@/layouts/layout';
-import Transition from '@/reuse/transition.reuse';
-import PageSEO from '@/seo/page.seo';
-import type { NextPage } from 'next';
-import React from 'react';
 
 const Homepage: NextPage = () => {
   return (

@@ -1,8 +1,12 @@
+/**
+ * local interfaces & types
+ */
 interface CardContainerProps {
   title: string;
   description: string;
   link?: string;
 }
+
 const CardContainer: React.FC<CardContainerProps> = ({
   title,
   description,

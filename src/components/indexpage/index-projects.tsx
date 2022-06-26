@@ -1,5 +1,12 @@
+/**
+ * components
+ */
 import CardContainer from './card-container';
+/**
+ * icons
+ */
 import { AiOutlineFundProjectionScreen } from 'react-icons/ai';
+
 const Projects: React.FC = () => {
   return (
     <div className="w-full flex flex-col justify-center">

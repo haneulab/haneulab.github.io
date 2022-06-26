@@ -1,3 +1,6 @@
+/**
+ * components
+ */
 import Footer from './footer.layout';
 import Header from './header.layout';
 import ParentLayout from './parent.layout';

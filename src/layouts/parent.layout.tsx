@@ -1,3 +1,6 @@
+/**
+ * local interfaces & types
+ */
 interface ParentLayoutProps {
   header: JSX.Element;
   children: JSX.Element;

@@ -1,15 +1,29 @@
-import reactClassname from '@/libs/reactClassname';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+/**
+ * react
+ */
 import React, { useEffect, useState } from 'react';
+/**
+ * next
+ */
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+/**
+ * lib
+ */
+import reactClassname from '@/libs/reactClassname';
+/**
+ * icons
+ */
 import { BsGithub, BsLinkedin } from 'react-icons/bs';
 import { TiBusinessCard } from 'react-icons/ti';
+/**
+ * local interfaces & types
+ */
 interface RouteData {
   href: string;
   textContent: string;
 }
 type RouteDataSetType = Array<RouteData>;
-
 const Routes: RouteDataSetType = [
   { href: '/', textContent: 'home' },
   { href: '/about', textContent: 'about' },

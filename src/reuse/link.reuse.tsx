@@ -1,6 +1,14 @@
-import { motion } from 'framer-motion';
+/**
+ * next
+ */
 import Link from 'next/link';
-
+/**
+ * motion
+ */
+import { motion } from 'framer-motion';
+/**
+ * local interfaces & types
+ */
 interface TransitionLinkProps {
   textContent: string | JSX.Element;
   href: string;

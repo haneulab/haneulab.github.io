@@ -1,6 +1,11 @@
+/**
+ * components
+ */
 import TransitionLink from '@/reuse/link.reuse';
+/**
+ * motion
+ */
 import { motion, Variants } from 'framer-motion';
-
 const imgVariants: Variants = {
   offscreen: {
     rotate: 0,

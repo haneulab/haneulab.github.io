@@ -1,4 +1,8 @@
+/**
+ * components
+ */
 import TransitionLink from '@/reuse/link.reuse';
+
 const Hero: React.FC = () => {
   return (
     <div className="relative w-full h-[58vh] flex flex-col justify-center">

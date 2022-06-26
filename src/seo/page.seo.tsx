@@ -1,10 +1,16 @@
+/**
+ * next
+ */
 import Head from 'next/head';
-
+/**
+ * local interfaces & types
+ */
 interface PageSEOProps {
   title: string;
   description: string;
   keywords: string[];
 }
+
 const PageSEO: React.FC<PageSEOProps> = ({ title, keywords, description }) => {
   return (
     <Head>

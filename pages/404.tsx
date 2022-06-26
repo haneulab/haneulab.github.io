@@ -1,8 +1,27 @@
-import Transition from '@/reuse/transition.reuse';
-import { motion } from 'framer-motion';
-import { NextPage } from 'next';
+/**
+ * react
+ */
+import React from 'react';
+/**
+ * next
+ */
 import Link from 'next/link';
+/**
+ * types
+ */
+import type { NextPage } from 'next';
+/**
+ * components
+ */
+import Transition from '@/reuse/transition.reuse';
+/**
+ * icons
+ */
 import { IoArrowBack } from 'react-icons/io5';
+/**
+ * motion
+ */
+import { motion } from 'framer-motion';
 
 const Custom404: NextPage = () => {
   return (
