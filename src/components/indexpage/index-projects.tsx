@@ -4,11 +4,9 @@ const Projects: React.FC = () => {
   return (
     <div className="w-full flex flex-col justify-center">
       <section className="p-8 md:p-16 lg:px-24">
-        <h3 className="mb-12 flex items-center space-x-4">
-          <AiOutlineFundProjectionScreen className="text-2xl lg:text-3xl text-gray-400" />
-          <span className="text-2xl lg:text-3xl text-gray-400">
-            My Projects
-          </span>
+        <h3 className="mb-12 flex items-center space-x-4 text-amber-500">
+          <AiOutlineFundProjectionScreen className="text-2xl lg:text-3xl" />
+          <span className="text-2xl lg:text-3xl">My Projects</span>
         </h3>
         <div className="grid grid-cols-1 xl:grid-cols-4 gap-12 pl-4">
           <CardContainer

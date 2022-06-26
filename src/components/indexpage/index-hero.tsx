@@ -1,6 +1,8 @@
+import Link from 'next/link';
+
 const Hero: React.FC = () => {
   return (
-    <div className="relative w-full h-screen flex flex-col justify-center">
+    <div className="relative w-full h-[58vh] flex flex-col justify-center">
       <section className="p-8 md:p-16 lg:px-24">
         <h2 className="font-normal text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
           HaneuLab
@@ -17,9 +19,11 @@ const Hero: React.FC = () => {
           Freelancer & Project Developer
         </p>
         <div className="mt-8">
-          <button className="flex items-center px-8 py-3 font-medium bg-black/80 text-gray-50 transition-all hover:bg-black/60">
-            <span>View All My Projects</span>
-          </button>
+          <Link href="/projects">
+            <a className="cursor-pointer w-max flex items-center px-8 py-3 font-medium bg-black/80 text-gray-50 transition-all hover:bg-black/60">
+              View All My Projects
+            </a>
+          </Link>
         </div>
       </section>
     </div>

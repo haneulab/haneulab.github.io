@@ -1,4 +1,5 @@
 import About from '@/components/indexpage/index-about';
+import FlowImage from '@/components/indexpage/index-flowImage';
 import Hero from '@/components/indexpage/index-hero';
 import Projects from '@/components/indexpage/index-projects';
 import Layout from '@/layouts/layout';
@@ -28,6 +29,7 @@ const Homepage: NextPage = () => {
         <Transition id="index-page" className="w-full relative">
           <>
             <Hero />
+            <FlowImage />
             <About />
             <Projects />
           </>

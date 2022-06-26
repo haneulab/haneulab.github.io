@@ -101,14 +101,6 @@ const Header: React.FC = () => {
               >
                 <span
                   className={reactClassname(
-                    'w-full h-full absolute rounded-full z-10 transform scale-110 transition-all',
-                    asideOpen
-                      ? 'translate-x-0 bg-black/5'
-                      : '-translate-x-[100%] bg-white',
-                  )}
-                />
-                <span
-                  className={reactClassname(
                     'transition-all z-20',
                     asideOpen ? 'text-gray-400' : 'text-gray-700',
                   )}
@@ -135,9 +127,11 @@ const Header: React.FC = () => {
             </Link>
           </h1>
           <nav className="relative flex md:hidden items-center justify-center space-x-4">
-            <button className="text-base px-4 py-2 border border-gray-400 text-gray-400">
-              <span>Inquiry</span>
-            </button>
+            <Link href="/inquiry">
+              <a className="text-base px-4 py-2 border border-gray-400 text-gray-400">
+                Inquiry
+              </a>
+            </Link>
             <button
               onClick={onClickAsideToggle}
               className={reactClassname(
@@ -167,6 +161,15 @@ const Header: React.FC = () => {
                 )}
               />
             </button>
+          </nav>
+          <nav className="hidden md:flex items-center justify-center space-x-4 lg:space-x-6">
+            {Routes.map((eachRoute, routeIndex) => (
+              <Link href={eachRoute.href} key={routeIndex}>
+                <a className="capitalize lg:text-lg xl:text-xl transition-all hover hover:text-gray-400">
+                  {eachRoute.textContent}
+                </a>
+              </Link>
+            ))}
           </nav>
         </section>
       </header>
