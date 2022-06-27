@@ -12,6 +12,7 @@ import type { NextPage } from 'next';
 import Layout from '@/layouts/layout';
 import Transition from '@/reuse/transition.reuse';
 import PageSEO from '@/seo/page.seo';
+import Hero from '@/components/aboutpage/about-hero';
 
 const Aboutpage: NextPage = () => {
   return (
@@ -33,9 +34,11 @@ const Aboutpage: NextPage = () => {
       <Layout.page>
         <Transition
           id="about-page"
-          className="w-full min-h-screen flex flex-col justify-center items-center"
+          className="w-full min-h-screen flex flex-col justify-center"
         >
-          <p>Hello World!</p>
+          <>
+            <Hero />
+          </>
         </Transition>
       </Layout.page>
     </React.Fragment>

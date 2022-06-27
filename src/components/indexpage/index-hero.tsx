@@ -1,7 +1,11 @@
 /**
  * components
  */
-import TransitionLink from '@/reuse/link.reuse';
+import Link from 'next/link';
+/**
+ * icons
+ */
+import { AiOutlineFundProjectionScreen } from 'react-icons/ai';
 
 const Hero: React.FC = () => {
   return (
@@ -22,7 +26,12 @@ const Hero: React.FC = () => {
           Freelancer & Project Developer
         </p>
         <div className="mt-8">
-          <TransitionLink href="/projects" textContent="View All My Projects" />
+          <Link href="/projects">
+            <a className="w-max px-8 pb-4 border-b-2 text-lg font-medium lg:text-xl border-amber-500 text-amber-500 transition-all hover hover:border-amber-300 hover:text-amber-400 flex items-center space-x-4">
+              <span>View My Projects</span>
+              <AiOutlineFundProjectionScreen className="text-2xl" />
+            </a>
+          </Link>
         </div>
       </section>
     </div>

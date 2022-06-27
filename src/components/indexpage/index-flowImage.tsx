@@ -8,10 +8,10 @@ import TransitionLink from '@/reuse/link.reuse';
 import { motion, Variants } from 'framer-motion';
 const imgVariants: Variants = {
   offscreen: {
-    rotate: 0,
+    rotate: 5,
   },
   onscreen: {
-    rotate: 5,
+    rotate: 0,
     transition: {
       type: 'spring',
       bounce: 0.4,
@@ -23,7 +23,7 @@ const imgVariants: Variants = {
 const FlowImage: React.FC = () => {
   return (
     <motion.div className="relative shadow-inner w-full overflow-x-scroll h-[42vh] flex flex-col justify-center ">
-      <section className="min-w-full h-full px-8 md:px-16 lg:px-24 max-w-max flex items-center justify-start space-x-12 overflow-y-hidden">
+      <section className="min-w-full h-full px-8 py-12 md:px-16 lg:px-24 max-w-max flex items-center justify-start space-x-12 overflow-y-hidden">
         {[1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3].map((eachNumber, numberIndex) => (
           <motion.img
             initial="offscreen"
@@ -37,7 +37,7 @@ const FlowImage: React.FC = () => {
         ))}
       </section>
 
-      <div className="absolute top-1/2 left-1/2 transition-all transform -translate-x-1/2 -translate-y-1/2 w-max h-max">
+      <div className="absolute top-12 left-0 transform -translate-y-1/2 w-max h-max">
         <TransitionLink href="/photos" textContent="View More Photos" />
       </div>
     </motion.div>
