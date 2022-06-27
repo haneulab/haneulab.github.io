@@ -6,7 +6,7 @@ import Link from 'next/link';
 const Hero: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col justify-center items-start">
-      <section className="p-8 py-28 md:px-16 lg:px-24">
+      <section className="p-8 py-32 md:px-16 lg:px-24">
         <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl mb-4">
           About Haneul Choi
         </h2>
