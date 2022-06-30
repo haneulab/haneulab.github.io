@@ -16,8 +16,9 @@ const PageSEO: React.FC<PageSEOProps> = ({ title, keywords, description }) => {
     <Head>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords.join(', ')} />
-      {title && <title>HaneuLab | {title}</title>}
-      {!title && <title>HaneuLab | Home</title>}
+      <title>
+        HaneuLab - Freelancing Software Developer {title ? `| ${title}` : ''}
+      </title>
     </Head>
   );
 };

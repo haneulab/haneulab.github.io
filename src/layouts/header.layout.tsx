@@ -28,7 +28,7 @@ const Routes: RouteDataSetType = [
   { href: '/', textContent: 'home' },
   { href: '/about', textContent: 'about' },
   { href: '/projects', textContent: 'projects' },
-  { href: '/contact', textContent: 'contact' },
+  { href: '/photos', textContent: 'photos' },
 ];
 
 const Header: React.FC = () => {
@@ -71,7 +71,7 @@ const Header: React.FC = () => {
       >
         <section className="p-8">
           <h3 className="font-light text-2xl pb-2 border-b-2 text-gray-500 mb-4">
-            HaneuLab |{' '}
+            HaneuLab -{' '}
             {router.pathname.replace('/', '')
               ? router.pathname.replace('/', '')
               : 'Home'}
@@ -83,7 +83,7 @@ const Header: React.FC = () => {
                   className={reactClassname(
                     'font-normal text-xl capitalize transition-all',
                     router.pathname === eachRoute.href
-                      ? 'text-gray-800 pl-2 border-l-4 border-gray-600'
+                      ? 'text-amber-400 pl-2 border-l-4 border-amber-500'
                       : 'text-gray-400 pl-0 border-l-0',
                   )}
                 >
@@ -114,7 +114,7 @@ const Header: React.FC = () => {
       </aside>
       <header
         className={reactClassname(
-          'fixed z-50 bg-white/90 top-0 w-full lg:shadow-none lg:grid lg:grid-cols-10 transition-all border-b',
+          'fixed z-50 bg-white/95 top-0 w-full lg:shadow-none lg:grid lg:grid-cols-10 transition-all border-b',
           asideOpen ? ' border-gray-200 shadow-none' : 'border-transparent',
           scrollPosition > 50 && asideOpen
             ? 'shadow-none'
@@ -134,42 +134,23 @@ const Header: React.FC = () => {
               <a
                 className={reactClassname(
                   'font-medium transition-all flex items-center relative transform',
-                  asideOpen ? 'rotate-[360deg]' : 'rotate-0',
+                  asideOpen
+                    ? 'scale-110 text-amber-500'
+                    : 'scale-100 text-gray-700',
                   scrollPosition > 50
-                    ? 'text-2xl md:text-3xl lg:text-4xl'
-                    : 'text-3xl md:text-4xl lg:text-5xl',
+                    ? 'text-2xl md:text-3xl lg:text-4xl text-amber-400'
+                    : 'text-3xl md:text-4xl lg:text-5xl text-gray-700',
                 )}
               >
-                <span
-                  className={reactClassname(
-                    'transition-all z-20',
-                    asideOpen ? 'text-gray-400' : 'text-gray-700',
-                  )}
-                >
-                  H
-                </span>
-                <span
-                  className={reactClassname(
-                    'transition-all z-20',
-                    asideOpen ? 'text-gray-400' : 'text-gray-700',
-                  )}
-                >
-                  L
-                </span>
-                <span
-                  className={reactClassname(
-                    'transition-all z-20',
-                    asideOpen ? 'text-gray-400' : 'text-gray-700',
-                  )}
-                >
-                  .
-                </span>
+                <span className="transition-all z-20">H</span>
+                <span className="transition-all z-20">L</span>
+                <span className="transition-all z-20">.</span>
               </a>
             </Link>
           </h1>
           <nav className="relative flex md:hidden items-center justify-center space-x-4">
             <Link href={router.pathname.includes('inquiry') ? '/' : '/inquiry'}>
-              <a className="text-base px-4 py-2 border border-amber-500 text-amber-500">
+              <a className="text-base px-4 py-2 border border-amber-500 text-amber-400">
                 {router.pathname.includes('inquiry') ? 'Home' : 'Inquiry'}
               </a>
             </Link>
@@ -207,7 +188,14 @@ const Header: React.FC = () => {
             <ul className="flex items-center justify-center space-x-4 lg:space-x-6">
               {Routes.map((eachRoute, routeIndex) => (
                 <Link href={eachRoute.href} key={routeIndex}>
-                  <a className="capitalize lg:text-lg xl:text-xl transition-all hover hover:text-gray-400">
+                  <a
+                    className={reactClassname(
+                      'capitalize transition-all hover',
+                      scrollPosition > 50
+                        ? 'text-gray-400 hover:text-gray-600 lg:text-base xl:text-lg'
+                        : 'text-gray-600 hover:text-gray-400 lg:text-lg xl:text-xl ',
+                    )}
+                  >
                     {eachRoute.textContent}
                   </a>
                 </Link>
@@ -218,7 +206,12 @@ const Header: React.FC = () => {
                 router.pathname.includes('inquiry') ? '/projects' : '/inquiry'
               }
             >
-              <a className="px-3 py-2 rounded-full border font-normal hover text-amber-500 border-amber-500 hover:text-black/80 hover:border-black/80 transition-all flex items-center space-x-2">
+              <a
+                className={reactClassname(
+                  'px-3 py-2 rounded-full border font-normal hover text-amber-500 border-amber-500 hover:text-black/80 hover:border-black/80 transition-all flex items-center space-x-2',
+                  scrollPosition > 50 ? 'text-sm' : 'text-base',
+                )}
+              >
                 <TiBusinessCard />
                 <span>
                   {router.pathname.includes('inquiry')

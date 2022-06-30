@@ -127,7 +127,7 @@ const Inquirypage: NextPage = () => {
             <form
               onSubmit={(e) => onEmailSubmit(e)}
               className={reactClassname(
-                'transform my-36 w-10/12 md:w-full max-w-md mx-auto rounded-lg border flex-col px-8 py-8 bg-gradient-to-br from-amber-500/5  to-orange-500/5 backdrop-blur-sm transition-all',
+                'transform my-36 w-10/12 md:w-full max-w-md mx-auto rounded-lg border border-amber-500 flex-col px-8 py-8 bg-gradient-to-br backdrop-blur-sm transition-all',
                 typeof sendError !== 'boolean' ? 'hidden' : 'flex',
               )}
             >
