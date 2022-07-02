@@ -4,27 +4,27 @@
 import { motion, Variants } from 'framer-motion';
 const imgVariantsEven: Variants = {
   offscreen: {
-    rotate: 5,
+    x: -5,
   },
   onscreen: {
-    rotate: 0,
+    x: 0,
     transition: {
       type: 'spring',
-      bounce: 1,
-      duration: 0.4,
+      bounce: 0.5,
+      duration: 1,
     },
   },
 };
 const imgVariantsOdd: Variants = {
   offscreen: {
-    rotate: -5,
+    x: 5,
   },
   onscreen: {
-    rotate: 0,
+    x: 0,
     transition: {
       type: 'spring',
-      bounce: 1,
-      duration: 0.4,
+      bounce: 0.5,
+      duration: 1,
     },
   },
 };
@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
       <section className="w-full pt-32 pb-28 p-8 md:px-12 lg:px-24">
         <h3 className="text-center text-2xl md:text-3xl lg:text-4xl font-medium text-gray-500">
           HaneuLab{' '}
-          <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-500 via-amber-400 to-amber-200">
+          <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-cyan-400 to-sky-400">
             Photos
           </span>
         </h3>

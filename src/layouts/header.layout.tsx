@@ -57,20 +57,20 @@ const Header: React.FC = () => {
         className={reactClassname(
           'transition-all transform ease-in fixed top-0 h-screen bg-white/90',
           asideOpen
-            ? 'translate-x-0 opacity-100 w-full z-30'
-            : '-translate-x-full opacity-0 w-0 -z-30',
+            ? 'translate-y-0 opacity-100 w-full z-30'
+            : '-translate-y-full opacity-0 w-0 -z-30',
         )}
       />
       <aside
         className={reactClassname(
-          'w-full fixed h-screen top-0 flex md:hidden flex-col justify-center transition-all transform ease-in',
+          'w-full fixed top-0 flex md:hidden flex-col justify-center transition-all transform ease-in',
           asideOpen
-            ? ' opacity-100 bg-white z-40 translate-x-0 ease-in'
-            : '-z-40 opacity-0 bg-transparent -translate-x-full ease-in',
+            ? ' opacity-100 bg-white/90 z-40 translate-y-0 ease-in h-screen'
+            : '-z-40 opacity-0 bg-transparent -translate-y-full ease-in h-0',
         )}
       >
         <section className="p-8">
-          <h3 className="font-light text-2xl pb-2 border-b-2 text-gray-500 mb-4">
+          <h3 className="font-light text-2xl pb-2 border-b-2 text-stone-800 mb-4">
             HaneuLab -{' '}
             {router.pathname.replace('/', '')
               ? router.pathname.replace('/', '')
@@ -83,7 +83,7 @@ const Header: React.FC = () => {
                   className={reactClassname(
                     'font-normal text-xl capitalize transition-all',
                     router.pathname === eachRoute.href
-                      ? 'text-amber-400 pl-2 border-l-4 border-amber-500'
+                      ? 'text-stone-400 pl-2 border-l-4 border-stone-500'
                       : 'text-gray-400 pl-0 border-l-0',
                   )}
                 >
@@ -92,7 +92,7 @@ const Header: React.FC = () => {
               </Link>
             ))}
           </ul>
-          <ul className="mt-8 pt-4 border-t-2 flex items-center space-x-4 text-gray-700">
+          <ul className="mt-8 pt-4 border-t-2 flex items-center space-x-4 text-stone-600">
             <li>
               <a
                 href="https://github.com/haneulab"
@@ -116,30 +116,22 @@ const Header: React.FC = () => {
         className={reactClassname(
           'fixed z-50 bg-white/95 top-0 w-full lg:shadow-none lg:grid lg:grid-cols-10 transition-all border-b',
           asideOpen ? ' border-gray-200 shadow-none' : 'border-transparent',
-          scrollPosition > 50 && asideOpen
-            ? 'shadow-none'
-            : scrollPosition > 50
-            ? 'shadow-md'
-            : '',
+          scrollPosition > 50 && asideOpen ? '' : scrollPosition > 50 ? '' : '',
         )}
       >
         <section
           className={reactClassname(
-            'px-8 md:px-16 lg:px-24 w-full lg:col-span-10 flex justify-between lg:space-x-8 items-center transition-all',
-            scrollPosition > 50 ? 'py-4' : ' py-6',
+            'px-8 md:px-16 lg:px-24 py-4 w-full lg:col-span-10 flex justify-between lg:space-x-8 items-center transition-all',
+            scrollPosition > 50 ? 'opacity-50' : ' opacity-100',
           )}
         >
           <h1>
             <Link href="/">
               <a
                 className={reactClassname(
-                  'font-medium transition-all flex items-center relative transform',
-                  asideOpen
-                    ? 'scale-110 text-amber-500'
-                    : 'scale-100 text-gray-700',
-                  scrollPosition > 50
-                    ? 'text-2xl md:text-3xl lg:text-4xl text-amber-400'
-                    : 'text-3xl md:text-4xl lg:text-5xl text-gray-700',
+                  'font-medium transition-all flex items-center relative transform text-2xl md:text-3xl lg:text-4xl ',
+                  asideOpen ? ' text-stone-500' : '',
+                  scrollPosition > 50 ? 'text-stone-500' : '',
                 )}
               >
                 <span className="transition-all z-20">H</span>
@@ -150,7 +142,7 @@ const Header: React.FC = () => {
           </h1>
           <nav className="relative flex md:hidden items-center justify-center space-x-4">
             <Link href={router.pathname.includes('inquiry') ? '/' : '/inquiry'}>
-              <a className="text-base px-4 py-2 border border-amber-500 text-amber-400">
+              <a className="text-base px-4 py-2 border border-stone-500 text-stone-500 rounded-full">
                 {router.pathname.includes('inquiry') ? 'Home' : 'Inquiry'}
               </a>
             </Link>
@@ -208,7 +200,7 @@ const Header: React.FC = () => {
             >
               <a
                 className={reactClassname(
-                  'px-3 py-2 rounded-full border font-normal hover text-amber-500 border-amber-500 hover:text-black/80 hover:border-black/80 transition-all flex items-center space-x-2',
+                  'px-3 py-2 rounded-full border font-normal hover text-blue-500 border-blue-500 lg:hover:bg-blue-500 lg:hover:text-white transition-all flex items-center space-x-2',
                   scrollPosition > 50 ? 'text-sm' : 'text-base',
                 )}
               >

@@ -11,9 +11,9 @@ interface TransitionProps {
   children: JSX.Element;
 }
 const variants = {
-  hidden: { opacity: 0, x: 0, y: 0 },
+  hidden: { opacity: 0, x: 0, y: 25 },
   enter: { opacity: 1, x: 0, y: 0 },
-  exit: { opacity: 0, x: 0, y: -100 },
+  exit: { opacity: 0, x: 0, y: -25 },
 };
 
 const Transition: React.FC<TransitionProps> = ({ id, children, className }) => {
@@ -24,7 +24,7 @@ const Transition: React.FC<TransitionProps> = ({ id, children, className }) => {
       initial="hidden"
       animate="enter"
       exit="exit"
-      transition={{ type: 'spring' }}
+      transition={{ duration: 0.75 }}
       className={className}
     >
       {children}

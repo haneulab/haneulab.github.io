@@ -19,7 +19,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   category,
 }) => {
   return (
-    <article className="border-2 w-full border-amber-500/50 backdrop-blur-sm bg-white/90 shadow-gray-500/10 transition-all hover shadow-none lg:hover:shadow-xl lg:hover:border-amber-500/90 cursor-pointer">
+    <article className="border-2 w-full border-blue-500/20 overflow-hidden rounded-xl backdrop-blur-sm bg-white/90 shadow-blue-500/10 transition-all hover shadow-none lg:hover:shadow-xl lg:hover:border-blue-500/50 cursor-pointer">
       <section className="flex flex-col w-full h-full justfiy-between">
         <div className="flex flex-col px-8 pt-8 h-full">
           <code className="capitalize font-sans block text-sm text-gray-400">
@@ -35,7 +35,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {href ? (
           <a
             href={href}
-            className="flex px-8 py-4 mt-4 h-max font-bold text-amber-400 hover:text-amber-500 border-l-0 border-transparent transition-all hover:border-l-8 hover:border-l-amber-400 items-center space-x-2"
+            className="flex px-8 py-4 mt-4 h-max font-bold text-blue-400 hover:text-blue-500 border-l-0 border-transparent transition-all hover:border-l-8 hover:border-l-blue-400/40 items-center space-x-2"
           >
             <span>View Project</span> <MdCalendarViewMonth />
           </a>

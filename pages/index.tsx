@@ -12,10 +12,7 @@ import type { NextPage } from 'next';
 import Layout from '@/layouts/layout';
 import Transition from '@/reuse/transition.reuse';
 import PageSEO from '@/seo/page.seo';
-import About from '@/components/indexpage/index-about';
-import FlowImage from '@/components/indexpage/index-flowImage';
 import Hero from '@/components/indexpage/index-hero';
-import Projects from '@/components/indexpage/index-projects';
 
 const Homepage: NextPage = () => {
   return (
@@ -36,12 +33,7 @@ const Homepage: NextPage = () => {
       />
       <Layout.page>
         <Transition id="index-page" className="w-full relative">
-          <>
-            <Hero />
-            <FlowImage />
-            <About />
-            <Projects />
-          </>
+          <Hero />
         </Transition>
       </Layout.page>
     </React.Fragment>

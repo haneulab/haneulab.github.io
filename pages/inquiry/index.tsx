@@ -113,21 +113,21 @@ const Inquirypage: NextPage = () => {
           'Business Marketing',
         ]}
       />
-      <Transition id="inquiry-page" className="w-full relative">
-        <Layout.page>
-          <>
-            <Loading
-              loadingText={
-                formStatus === 'before' || formStatus === 'sending'
-                  ? 'Email Resolving...'
-                  : 'Getting Response...'
-              }
-              viewIf={formStatus === 'sending' || formStatus == 'fetching'}
-            />
+      <Layout.page>
+        <>
+          <Loading
+            loadingText={
+              formStatus === 'before' || formStatus === 'sending'
+                ? 'Email Resolving...'
+                : 'Getting Response...'
+            }
+            viewIf={formStatus === 'sending' || formStatus == 'fetching'}
+          />
+          <Transition id="inquiry-form" className="">
             <form
               onSubmit={(e) => onEmailSubmit(e)}
               className={reactClassname(
-                'transform my-36 w-10/12 md:w-full max-w-md mx-auto rounded-lg border border-amber-500 flex-col px-8 py-8 bg-gradient-to-br backdrop-blur-sm transition-all',
+                'transform my-24 w-10/12 md:w-full max-w-md mx-auto rounded-lg border border-blue-500 flex-col px-8 py-8 bg-gradient-to-br backdrop-blur-sm transition-all',
                 typeof sendError !== 'boolean' ? 'hidden' : 'flex',
               )}
             >
@@ -146,7 +146,7 @@ const Inquirypage: NextPage = () => {
                 name="fullname"
                 value={fullname}
                 onChange={(e) => setFullname(e.target.value)}
-                className="bg-transparent border-b py-2 pl-4 focus:outline-none rounded-none focus:ring-1 ring-amber-600 font-light text-gray-700"
+                className="bg-transparent border-b py-2 pl-4 focus:outline-none rounded-none focus:ring-1 ring-blue-500 font-light text-gray-700"
               />
 
               <label
@@ -160,7 +160,7 @@ const Inquirypage: NextPage = () => {
                 name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-transparent border-b py-2 pl-4 focus:outline-none rounded-none focus:ring-1 ring-amber-600 font-light text-gray-700"
+                className="bg-transparent border-b py-2 pl-4 focus:outline-none rounded-none focus:ring-1 ring-blue-500 font-light text-gray-700"
               />
 
               <label
@@ -174,7 +174,7 @@ const Inquirypage: NextPage = () => {
                 name="subject"
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
-                className="bg-transparent border-b py-2 pl-4 focus:outline-none rounded-none focus:ring-1 ring-amber-600 font-light text-gray-700"
+                className="bg-transparent border-b py-2 pl-4 focus:outline-none rounded-none focus:ring-1 ring-blue-500 font-light text-gray-700"
               />
 
               <label
@@ -185,12 +185,12 @@ const Inquirypage: NextPage = () => {
               </label>
               <textarea
                 name="message"
-                className="bg-transparent border-b py-2 pl-4 focus:outline-none rounded-none focus:ring-1 ring-amber-600 font-light text-gray-700"
+                className="bg-transparent border-b py-2 pl-4 focus:outline-none rounded-none focus:ring-1 ring-blue-500 font-light text-gray-700"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>
               <div className="flex flex-row items-center justify-start">
-                <button className="px-10 mt-8 py-2 bg-black/80 text-white transition-all hover hover:bg-black/50 transform hover:translate-x-2 font-medium rounded-md text-lg flex flex-row items-center">
+                <button className="px-10 mt-8 py-2 bg-blue-600/80 text-white transition-all hover hover:bg-blue-500/50 transform hover:translate-x-2 font-medium rounded-md text-lg flex flex-row items-center">
                   Send
                   <svg
                     width="24"
@@ -208,7 +208,9 @@ const Inquirypage: NextPage = () => {
                 </button>
               </div>
             </form>
-            {typeof sendError !== 'boolean' && sendError.isError && (
+          </Transition>
+          {typeof sendError !== 'boolean' && sendError.isError && (
+            <Transition id="inquiry-error" className="">
               <div className="w-full h-screen z-50 flex flex-col justify-center items-center p-8">
                 <p className="font-medium text-red-500 mb-2 lg:text-lg xl:text-xl">
                   {sendError.message}
@@ -230,21 +232,27 @@ const Inquirypage: NextPage = () => {
                   Try Again
                 </motion.button>
               </div>
-            )}
-            {typeof sendError !== 'boolean' && !sendError.isError && (
+            </Transition>
+          )}
+          {typeof sendError !== 'boolean' && !sendError.isError && (
+            <Transition id="inquiry-success" className="">
               <div className="h-screen flex flex-col justify-center items-center p-8">
                 <div className="flex items-center justify-center space-x-2">
-                  <p className="text-lg font-medium">
+                  <p className="text-lg font-medium text-blue-400">
                     Email was succcesfully sent,
                   </p>
-                  <span className="text-teal-400 font-bold text-2xl transform rotate-[22.5deg] animate-pulse">
+                  <span className="text-blue-400 font-bold text-2xl transform rotate-[22.5deg] animate-pulse">
                     OK!
                   </span>
                 </div>
-                <p className="font-light text-lg mt-6 mb-8 px-3 py-2 border text-gray-400 border-gray-200">
-                  <strong className="text-gray-700 font-medium">Haneul</strong>{' '}
-                  : I will respond to your email as soon as possible, thank you
-                  🙏
+                <p className="font-light text-lg mt-6 mb-8 text-stone-400 text-center">
+                  <strong className="text-stone-600 font-medium">
+                    Thank you for email submission!
+                  </strong>{' '}
+                  <span className="inline-block">
+                    I will respond to your email as soon as possible, thank you
+                    🙏
+                  </span>
                 </p>
                 <Link href="/">
                   <motion.a
@@ -263,10 +271,10 @@ const Inquirypage: NextPage = () => {
                   </motion.a>
                 </Link>
               </div>
-            )}
-          </>
-        </Layout.page>
-      </Transition>
+            </Transition>
+          )}
+        </>
+      </Layout.page>
     </React.Fragment>
   );
 };
