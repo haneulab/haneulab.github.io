@@ -16,7 +16,7 @@ const About: NextPage = () => {
                 className="w-full h-screen flex flex-col justify-center p-8 col-span-1 md:col-span-2 lg:col-span-3 lg:sticky lg:top-0 lg:pl-4 lg:pr-14 py-28"
               >
                 <>
-                  <div className="w-full max-w-xs mb-8">
+                  <div className="w-full max-w-xs mx-auto mb-8">
                     <img
                       src="images/Haneul_Choi.png"
                       alt=""
@@ -25,18 +25,27 @@ const About: NextPage = () => {
                   </div>
                   <div>
                     <ul className="font-mono flex flex-col space-y-4">
-                      <li className="flex justify-between items-center space-x-4 px-5 py-3 rounded-full border border-gray-600 shadow-md transition-all lg:hover:border-gray-300 text-gray-300">
+                      <a
+                        href="https://github.com/haneulab"
+                        className="flex justify-between items-center space-x-4 px-5 py-3 rounded-full border border-gray-600 shadow-md transition-all lg:hover:border-gray-300 text-gray-300"
+                      >
                         <BsGithub />
-                        <a href="https://github.com/haneulab">@ Source Codes</a>
-                      </li>
-                      <li className="flex justify-between items-center space-x-4 px-5 py-3 rounded-full border border-blue-600 shadow-md transition-all lg:hover:border-blue-300 text-blue-300">
+                        <span>@ Source Codes</span>
+                      </a>
+                      <a
+                        href="https://linkedin.com/in/haneulab"
+                        className="flex justify-between items-center space-x-4 px-5 py-3 rounded-full border border-blue-600 shadow-md transition-all lg:hover:border-blue-300 text-blue-300"
+                      >
                         <BsLinkedin />
-                        <a href="https://github.com/haneulab">@ E-Profile</a>
-                      </li>
-                      <li className="flex justify-between items-center space-x-4 px-5 py-3 rounded-full border border-pink-600 shadow-md transition-all lg:hover:border-pink-300 text-pink-300">
+                        <span>@ E-Profile</span>
+                      </a>
+                      <a
+                        href="https://instagram.com/__sky__e"
+                        className="flex justify-between items-center space-x-4 px-5 py-3 rounded-full border border-pink-600 shadow-md transition-all lg:hover:border-pink-300 text-pink-300"
+                      >
                         <BsInstagram />
-                        <a href="https://github.com/haneulab">@ Social Life</a>
-                      </li>
+                        <span>@ Social Life</span>
+                      </a>
                     </ul>
                   </div>
                 </>
