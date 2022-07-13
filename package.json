@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@motioned-official/react-components": "^1.0.0",
+    "@motioned-official/react-functions": "^1.0.4",
     "@sendgrid/mail": "^7.7.0",
     "framer-motion": "^6.3.13",
     "next": "12.1.6",
