@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { reactClassNames } from '@motioned-official/react-functions';
+import { BsChatDots, BsFileEarmarkPdf } from 'react-icons/bs';
 interface RouteObject {
   href: string;
   text: string;
@@ -37,6 +38,22 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
               </Link>
             </li>
           ))}
+          <li className="flex flex-col items-center space-y-4">
+            <a
+              href="#"
+              className="w-full flex items-center justify-between space-x-2 pl-3 text-xs transition-all border-l-4 border-dark-blue/50 text-dark-blue"
+            >
+              <span>Resume</span>
+              <BsFileEarmarkPdf />
+            </a>
+            <a
+              href="#"
+              className="w-full flex items-center justify-between space-x-2 pl-3 text-xs transition-all border-l-4 border-dark-blue/50 text-dark-blue"
+            >
+              <span>Inquiry</span>
+              <BsChatDots />
+            </a>
+          </li>
         </ul>
       </section>
     </nav>

@@ -3,6 +3,16 @@ import { Section, Wrap, Content } from '@motioned-official/react-components';
 import React from 'react';
 import { BsGithub, BsLinkedin, BsInstagram } from 'react-icons/bs';
 import SEO from 'src/components/reusable/SEO';
+import MyProfileImage from 'public/images/Haneul_Choi.png';
+import SoccerImage from 'public/images/Soccer_Image.png';
+import TravelImage from 'public/images/Travel_Image.png';
+import CookingImage from 'public/images/Cooking_Image.png';
+import Image from 'next/image';
+import AboutSectionTitle from 'src/components/reusable/AboutSectionTitle';
+import ExternalLink from 'src/components/reusable/ExternalLink';
+import HobbyCard from 'src/components/reusable/HobbyCard';
+import TitleBubble from 'src/components/reusable/TitleBubble';
+
 const About: NextPage = () => {
   return (
     <React.Fragment>
@@ -17,9 +27,9 @@ const About: NextPage = () => {
               >
                 <>
                   <div className="w-full max-w-xs mx-auto mb-8">
-                    <img
-                      src="images/Haneul_Choi.png"
-                      alt=""
+                    <Image
+                      src={MyProfileImage}
+                      alt="Haneul Choi Logo"
                       className="rounded-full"
                     />
                   </div>
@@ -56,9 +66,7 @@ const About: NextPage = () => {
               >
                 <>
                   <div className="min-h-screen py-28 px-8 lg:px-14">
-                    <h3 className="font-medium text-2xl text-left mb-8">
-                      Brief About Me
-                    </h3>
+                    <AboutSectionTitle title="Brief About Me" />
                     <p className="text-lg leading-8 mb-8">
                       Hello everyone, my name is Haneul Choi. It is pronounced
                       smilarly to &apos;ha-nool&apos; & &apos;cho-e&apos;. Or
@@ -101,88 +109,44 @@ const About: NextPage = () => {
                     </div>
                   </div>
                   <div className="w-full min-h-screen py-28 px-8 lg:px-14">
-                    <h3 className="font-medium text-2xl text-left mb-8">
-                      Hobbies & Gallery
-                    </h3>
-                    <ul className="w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-8">
-                      <article className="w-full h-full relative bg-dark-blue/5">
-                        <div className="absolute z-10 -top-2 left-1/2 transform -translate-x-1/2 flex items-center justify-start w-full">
-                          <span className=" w-6 text-center rounded-full bg-dark-blue animate-bounce">
-                            H
-                          </span>
-                          <span className=" w-6 text-center rounded-full bg-dark-blue animate-pulse">
-                            O
-                          </span>
-                          <span className=" w-6 text-center rounded-full bg-dark-blue animate-spin">
-                            B
-                          </span>
-                          <span className="  w-6 text-center rounded-full bg-dark-blue animate-bounce">
-                            B
-                          </span>
-                          <span className="  w-6 text-center rounded-full bg-dark-blue animate-pulse">
-                            I
-                          </span>
-                          <span className="  w-6 text-center rounded-full bg-dark-blue animate-spin">
-                            E
-                          </span>
-                          <span className="  w-6 text-center rounded-full bg-dark-blue animate-bounce">
-                            S
-                          </span>
+                    <AboutSectionTitle title="Hobbies & Gallery" />
+                    <ul className="w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8 lg:mt-12">
+                      <article className="w-full h-full relative bg-gradient-to-b from-transparent via-transparent to-dark-blue/20">
+                        <div className="absolute z-10 -top-2 lg:-top-4 left-1/2 transform -translate-x-1/2 flex items-center justify-between w-full">
+                          {'Hobbies'.split('').map((eachLetter, index) => (
+                            <TitleBubble textContent={eachLetter} key={index} />
+                          ))}
                         </div>
                         <ul className="relative w-full h-full z-0 backdrop-blur-sm p-8 text-dark-light">
-                          <li className="w-full flex justify-between items-center">
-                            <img
-                              src="images/Soccer_Image.png"
-                              alt=""
-                              className="w-1/2 "
-                            />
-                            <span className="font-bold text-xl text-right">
-                              Playing Soccer
-                            </span>
-                          </li>
-                          <li className="w-full flex justify-between items-center flex-row-reverse">
-                            <img
-                              src="images/Travel_Image.png"
-                              alt=""
-                              className="w-1/2"
-                            />
-                            <span className="font-bold text-xl">
-                              Travelling
-                            </span>
-                          </li>
-                          <li className="w-full flex justify-between items-center">
-                            <img
-                              src="images/Cooking_Image.png"
-                              alt=""
-                              className="w-1/2 "
-                            />
-                            <span className="font-bold text-xl">Cooking</span>
-                          </li>
+                          <HobbyCard
+                            image={{
+                              href: SoccerImage,
+                              alt: 'Soccer Image',
+                            }}
+                            title="Playing Soccer"
+                          />
+                          <HobbyCard
+                            image={{
+                              href: TravelImage,
+                              alt: 'Travel Image',
+                            }}
+                            title="Travelling"
+                            flexReverse
+                          />
+                          <HobbyCard
+                            image={{
+                              href: CookingImage,
+                              alt: 'Cooking Image',
+                            }}
+                            title="Cooking"
+                          />
                         </ul>
                       </article>
-                      <article className="w-full h-full flex flex-col justify-center items-center relative bg-dark-blue/5">
-                        <div className="absolute z-10 -top-2 left-1/2 transform -translate-x-1/2 flex items-center justify-start w-full">
-                          <span className=" w-6 text-center rounded-full bg-dark-blue animate-bounce">
-                            G
-                          </span>
-                          <span className=" w-6 text-center rounded-full bg-dark-blue animate-pulse">
-                            A
-                          </span>
-                          <span className=" w-6 text-center rounded-full bg-dark-blue animate-spin">
-                            L
-                          </span>
-                          <span className="  w-6 text-center rounded-full bg-dark-blue animate-bounce">
-                            L
-                          </span>
-                          <span className="  w-6 text-center rounded-full bg-dark-blue animate-pulse">
-                            E
-                          </span>
-                          <span className="  w-6 text-center rounded-full bg-dark-blue animate-spin">
-                            R
-                          </span>
-                          <span className="  w-6 text-center rounded-full bg-dark-blue animate-bounce">
-                            Y
-                          </span>
+                      <article className="w-full h-full flex flex-col justify-center items-center relative bg-gradient-to-b from-transparent via-transparent to-dark-blue/20">
+                        <div className="absolute z-10 -top-2 lg:-top-4 left-1/2 transform -translate-x-1/2 flex items-center justify-between w-full">
+                          {'Gallery'.split('').map((eachLetter, index) => (
+                            <TitleBubble textContent={eachLetter} key={index} />
+                          ))}
                         </div>
                         <p className="p-8 text-dark-blue/50">
                           Gallery is under construction
@@ -190,29 +154,13 @@ const About: NextPage = () => {
                       </article>
                     </ul>
                   </div>
-                  <div className="w-full flex flex-col justify-center py-28 px-8 lg:px-14">
-                    <h3 className="font-medium text-2xl mb-8 text-center">
-                      # Useful Links
-                    </h3>
-                    <ul className="w-max mx-auto flex flex-col space-y-4 text-center">
-                      <a
+                  <div className="w-full py-28 px-8 lg:px-14 flex flex-col items-center lg:items-start">
+                    <AboutSectionTitle title="# Useful Links" />
+                    <ul className="flex flex-col items-center lg:items-start space-y-4">
+                      <ExternalLink
                         href="https://github.com/haneulab"
-                        className="inline-flex justify-start items-center space-x-4 text-dark-light lg:hover:text-dark-blue transition-all lg:hover:space-x-6 cursor-pointer"
-                      >
-                        <span className="flex items-center space-x-1">
-                          <span className="w-1.5 h-1.5 rounded-xl bg-dark-blue" />
-                          <span className="w-1.5 h-1.5 rounded-xl bg-dark-blue" />
-                          <span className="w-1.5 h-1.5 rounded-xl bg-dark-blue" />
-                        </span>
-                        <span className="font-medium text-lg">
-                          Source Code Repositories
-                        </span>
-                        <span className="flex items-center space-x-1">
-                          <span className="w-1.5 h-1.5 rounded-xl bg-dark-blue" />
-                          <span className="w-1.5 h-1.5 rounded-xl bg-dark-blue" />
-                          <span className="w-1.5 h-1.5 rounded-xl bg-dark-blue" />
-                        </span>
-                      </a>
+                        textContent="Source Code Repositories"
+                      />
                     </ul>
                   </div>
                 </>

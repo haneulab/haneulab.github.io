@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { BsChatDots, BsFileEarmarkPdf } from 'react-icons/bs';
 
 interface RouteObject {
   href: string;
@@ -24,6 +25,22 @@ const DesktopNavigation: React.FC = () => {
             </Link>
           </li>
         ))}
+        <li className="flex items-center space-x-2">
+          <a
+            href="#"
+            className="flex items-center space-x-2 px-3 py-2 rounded-xl bg-dark-blue/5 text-xs transition-all hover:bg-dark-blue/50 text-dark-blue hover:text-dark-light border hover:border-transparent border-dark-blue/50"
+          >
+            <span>Resume</span>
+            <BsFileEarmarkPdf />
+          </a>
+          <a
+            href="#"
+            className="flex items-center space-x-2 px-3 py-2 rounded-xl bg-dark-blue/5 text-xs transition-all hover:bg-dark-blue/50 text-dark-blue hover:text-dark-light border hover:border-transparent border-dark-blue/50"
+          >
+            <span>Inquiry</span>
+            <BsChatDots />
+          </a>
+        </li>
       </ul>
     </nav>
   );
