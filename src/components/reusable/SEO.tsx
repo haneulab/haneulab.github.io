@@ -11,7 +11,7 @@ const SEO: React.FC = () => {
         name="description"
         content="Hi, this is my personal software development portfolio web application built with NextJS, TailwindCSS, and Typescript."
       />
-      <title>HaneuLab | Software Developer Based In California</title>
+      <title>Haneul Choi - A Software Developer Based In California</title>
     </Head>
   );
 };
