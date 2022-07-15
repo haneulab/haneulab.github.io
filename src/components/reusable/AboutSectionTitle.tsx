@@ -4,7 +4,9 @@ interface AboutSectionTitleProps {
 
 const AboutSectionTitle: React.FC<AboutSectionTitleProps> = ({ title }) => {
   return (
-    <h3 className="font-medium text-2xl text-left mb-8 capitalize">{title}</h3>
+    <h3 className="text-2xl text-left mb-8 capitalize font-roboto font-bold">
+      {title}
+    </h3>
   );
 };
 export default AboutSectionTitle;

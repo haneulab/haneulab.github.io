@@ -1,18 +1,24 @@
 /**
 ** google font api
 **/
-@import url('https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700&display=swap');
+.font-anek {
+  font-family: 'Anek Latin', sans-serif;
+}
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
 
 /**
 ** preset css
 **/
 html,
 body {
-    font-family: 'Anek Latin', sans-serif;
+  font-family: 'Anek Latin', sans-serif;
 }
 
 ::-webkit-scrollbar {
-    display: none
+  display: none;
 }
 
 /**

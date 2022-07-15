@@ -39,11 +39,13 @@ const Home: NextPage = () => {
                 <>
                   <h2 className="font-normal text-lg text-light-secondary">
                     Hi, I am{' '}
-                    <span className="text-2xl text-dark-blue">Haneul Choi</span>
+                    <span className="text-2xl text-dark-blue font-roboto font-bold">
+                      Haneul Choi
+                    </span>
                   </h2>
                   <p className="font-normal text-xl mb-12 text-light-secondary">
                     I am a{' '}
-                    <span className="text-3xl text-dark-blue">
+                    <span className="text-3xl text-dark-blue font-roboto font-bold">
                       software developer
                     </span>
                   </p>
