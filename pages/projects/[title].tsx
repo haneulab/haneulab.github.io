@@ -5,16 +5,20 @@ import React from 'react';
 import SEO from 'src/components/reusable/SEO';
 import works, { WorkDataInterface } from 'src/data/works';
 import { AiOutlineFundView } from 'react-icons/ai';
-import { HiOutlineViewGridAdd } from 'react-icons/hi';
 const ProjectDetail: NextPage<{ data: WorkDataInterface }> = ({ data }) => {
   return (
     <React.Fragment>
       <SEO />
-      <Section className="w-full min-h-screen flex flex-col justify-center">
-        <Wrap className="px-8 py-24 max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <Section className="w-full min-h-screen flex flex-col justify-center relative">
+        <Wrap className="px-8 py-32 max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12">
           <>
             <div className="col-span-1 lg:col-span-5 w-full h-full flex flex-col items-center">
               <div className="mb-8">
+                <span className="flex items-center space-x-2 capitalize">
+                  <span className="font-roboto text-dark-blue">
+                    {data.type}
+                  </span>
+                </span>
                 <h2 className="font-bold text-4xl font-roboto capitalize">
                   <span className="text-dark-blue text-center">
                     {data.title}
@@ -22,51 +26,19 @@ const ProjectDetail: NextPage<{ data: WorkDataInterface }> = ({ data }) => {
                   Project
                 </h2>
               </div>
-              <div className="px-6 flex flex-col space-y-3">
-                <span className="flex items-center space-x-2 capitalize">
-                  <span className="font-roboto">Project Type</span>
-                  <span className="text-dark-light font-anek px-5 p-1 rounded-full shadow-md bg-dark-blue/50">
-                    {data.type}
-                  </span>
-                </span>
-                <span className="flex items-center space-x-2 capitalize">
-                  <span className="font-roboto">Project Source Code</span>
-                  <span className="text-dark-blue font-anek">
-                    {data.links?.README ? (
-                      <a
-                        href={data.links.README}
-                        className="underline font-medium transition-all lg:hover:text-dark-blue/75"
-                      >
-                        here
-                      </a>
-                    ) : (
-                      <span>No source code</span>
-                    )}
-                  </span>
-                </span>
-                <span className="flex items-center space-x-2 capitalize">
-                  <span className="font-roboto">Project Demo</span>
-                  <span className="text-dark-blue font-anek">
-                    {data.links?.html_url ? (
-                      <a
-                        href={data.links.html_url}
-                        className="underline font-medium transition-all lg:hover:text-dark-blue/75"
-                      >
-                        here
-                      </a>
-                    ) : (
-                      <span>No demo view</span>
-                    )}
-                  </span>
-                </span>
-                <span className="flex items-center space-x-2 capitalize">
-                  <span className="font-roboto">Project Progression</span>
-                  <span className="text-dark-blue font-anek">
-                    <span>
-                      {data.progress === 'complete' ? 'complete' : 'ongoing'}
-                    </span>
-                  </span>
-                </span>
+              <div className="px-6 w-full flex flex-col items-center space-y-4 mb-4 lg:mb-0">
+                <a
+                  href={data.links?.README}
+                  className="w-full sm:max-w-[250px] text-center mx-auto font-roboto font-medium bg-gradient-to-r from-orange-500 to-amber-500 text-dark-light px-5 py-2 rounded-full transition-all lg:hover:from-orange-400 lg:hover:to-amber-400 lg:hover:text-dark-primary"
+                >
+                  Project Source Code
+                </a>
+                <a
+                  href={data.links?.html_url}
+                  className="w-full sm:max-w-[250px] text-center mx-auto font-roboto font-medium bg-gradient-to-r from-orange-500 to-amber-500 text-dark-light px-5 py-2 rounded-full transition-all lg:hover:from-orange-400 lg:hover:to-amber-400 lg:hover:text-dark-primary"
+                >
+                  Live Demo
+                </a>
               </div>
             </div>
             <div className="w-full relative h-full bg-gradient-to-b from-dark-primary via-dark-secondary to-dark-blue col-span-1 lg:col-span-7 rounded-b-xl shadow-md">
@@ -82,22 +54,16 @@ const ProjectDetail: NextPage<{ data: WorkDataInterface }> = ({ data }) => {
                     {each}
                   </p>
                 ))}
-                <div className="pt-3 flex flex-col lg:flex-row item-center space-y-3 lg:space-y-0 lg:space-x-3">
+                <div className="pt-3 flex flex-col">
                   {data.links?.html_url && (
                     <a
-                      className="flex justify-between items-center space-x-3 px-5 py-2 rounded-xl bg-dark-secondary/50 transition-all lg:hover:bg-dark-primary/90 lg:hover:text-dark-light font-medium"
+                      className="w-max flex justify-between items-center space-x-3 px-5 py-2 rounded-xl bg-dark-secondary/50 transition-all lg:hover:bg-dark-primary/90 lg:hover:text-dark-light font-medium"
                       href={data.links?.html_url}
                     >
-                      <span>Projet Landing Page</span>
+                      <span>Project Live Demo</span>
                       <AiOutlineFundView />
                     </a>
                   )}
-                  <Link href={'/projects'}>
-                    <a className="flex justify-between items-center space-x-3 px-5 py-2 rounded-xl bg-dark-secondary/50 transition-all lg:hover:bg-dark-primary/90 lg:hover:text-dark-light font-medium">
-                      <span>Browse All Projects</span>
-                      <HiOutlineViewGridAdd />
-                    </a>
-                  </Link>
                 </div>
               </section>
             </div>

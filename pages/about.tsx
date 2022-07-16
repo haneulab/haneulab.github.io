@@ -23,7 +23,7 @@ const About: NextPage = () => {
             <section className="w-full h-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-6 lg:grid-cols-10 gap-8 relative">
               <Content
                 displayType="block"
-                className="w-full h-screen flex flex-col justify-center p-8 col-span-1 md:col-span-2 lg:col-span-3 lg:sticky lg:top-0 lg:pl-4 lg:pr-14 py-28"
+                className="w-full h-screen flex flex-col justify-center p-8 col-span-1 md:col-span-2 lg:col-span-3 lg:sticky lg:top-0 lg:pl-4 lg:pr-14 py-32"
               >
                 <>
                   <div className="w-full max-w-xs mx-auto mb-8">
@@ -62,10 +62,10 @@ const About: NextPage = () => {
               </Content>
               <Content
                 displayType="block"
-                className="w-full col-span-1 md:col-span-4 lg:col-span-7"
+                className="w-full col-span-1 md:col-span-4 lg:col-span-7  px-8 lg:px-14 py-32"
               >
                 <>
-                  <div className="min-h-screen py-28 px-8 lg:px-14">
+                  <div className="min-h-screen">
                     <AboutSectionTitle title="Brief About Me" />
                     <p className="text-lg leading-8 mb-8">
                       Hello everyone, my name is Haneul Choi. It is pronounced

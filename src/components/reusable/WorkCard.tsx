@@ -28,7 +28,7 @@ const WorkCard: React.FC<WorkDataInterface> = ({
   return (
     <div
       onClick={() => onClickViewProjectDetail(title)}
-      className="w-full relative max-w-sm mx-auto cursor-pointer rounded-xl bg-gradient-to-t from-dark-primary to-dark-secondary border-b-4 border-x-2 border-t-2 border-dark-blue/20 shadow-md shadow-dark-blue/10 flex flex-col space-y-2"
+      className="w-full relative max-w-sm mx-auto cursor-pointer rounded-xl bg-gradient-to-t from-dark-primary to-dark-secondary border-b-4 border-x-2 border-t-2 border-dark-blue/20 shadow-md shadow-dark-blue/10 flex flex-col"
     >
       <div className="absolute top-6 left-6">
         <h3 className="capitalize flex flex-col">
@@ -40,7 +40,7 @@ const WorkCard: React.FC<WorkDataInterface> = ({
           </span>
         </h3>
       </div>
-      <div className="relative top-0 transition-all lg:hover:p-3 transform lg:hover:rotate-12 ease-out lg:hover:animate-pulse">
+      <div className="relative transition-all lg:hover:p-3 transform lg:hover:rotate-12 ease-out lg:hover:animate-pulse -top-4 -mt-4">
         <Image
           src={img}
           alt={`Image for Project ${id} | ${title}`}
@@ -48,11 +48,11 @@ const WorkCard: React.FC<WorkDataInterface> = ({
           className="transition-all"
         />
       </div>
-      <div className="px-6 relative -top-6">
+      <div className="px-6 relative -top-6 -mt-12">
         <p className="text-sm leading-6 lg:text-base lg:leading-7 text-dark-light/75">
           {description.short}
         </p>
-        <div className="mt-3">
+        <div className="mt-4 mb-0">
           <button
             className="text-sm rounded-xl px-3 py-2 w-full text-center border border-dark-blue text-dark-blue shadow-md transition-all lg:hover:bg-dark-blue/5 lg:hover:border-dark-blue/50 lg:hover:shadow-dark-blue/5 lg:hover:text-dark-light"
             onClick={() => onClickViewProjectDetail(title)}
@@ -72,7 +72,7 @@ const WorkCard: React.FC<WorkDataInterface> = ({
                   className="flex items-center space-x-2 transition-all lg:hover:text-dark-blue"
                 >
                   <AiOutlineRead />
-                  <span className="text-xs">Source Code</span>
+                  <span className="text-sm">Source Code</span>
                 </a>
               </li>
             )}
@@ -83,7 +83,7 @@ const WorkCard: React.FC<WorkDataInterface> = ({
                   className="flex items-center space-x-2 transition-all lg:hover:text-dark-blue"
                 >
                   <AiOutlineFundView />
-                  <span className="text-xs">View Product</span>
+                  <span className="text-sm">View Live</span>
                 </a>
               </li>
             )}

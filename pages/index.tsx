@@ -34,19 +34,18 @@ const Home: NextPage = () => {
               </Content>
               <Content
                 displayType="block"
-                className="flex flex-col items-center"
+                className="flex flex-col items-center relative backdrop-blur-md"
               >
                 <>
-                  <h2 className="font-normal text-lg text-light-secondary">
+                  <h2 className="font-light text-lg text-light-secondary">
                     Hi, I am{' '}
-                    <span className="text-2xl text-dark-blue font-roboto font-bold">
+                    <span className="text-2xl text-dark-blue font-roboto">
                       Haneul Choi
                     </span>
                   </h2>
-                  <p className="font-normal text-xl mb-12 text-light-secondary">
-                    I am a{' '}
-                    <span className="text-3xl text-dark-blue font-roboto font-bold">
-                      software developer
+                  <p className="font-medium text-xl mb-12 text-light-secondary">
+                    <span className="text-3xl text-dark-blue font-roboto">
+                      Software Developer
                     </span>
                   </p>
                   <div>
